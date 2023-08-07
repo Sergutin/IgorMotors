@@ -2,5 +2,26 @@ from django.contrib import admin
 from .models import Car, Make
 
 # Register your models here.
-admin.site.register(Car)
-admin.site.register(Make)
+
+
+class CarAdmin(admin.ModelAdmin):
+    list_display = (
+        'sku',
+        'name',
+        'category',
+        'price',
+        'image',
+    )
+
+    ordering = ('sku',)
+
+
+class MakeAdmin(admin.ModelAdmin):
+    list_display = (
+        'friendly_name',
+        'name',
+    )
+
+
+admin.site.register(Car, CarAdmin)
+admin.site.register(Make, MakeAdmin)
