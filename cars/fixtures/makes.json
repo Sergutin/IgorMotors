@@ -1,0 +1,11 @@
+[{"pk":1,"model":"cars.make","fields":{"name":"audi","friendly_name":"Audi"}},
+{"pk":2,"model":"cars.make","fields":{"name":"bmw","friendly_name":"BMW"}},
+{"pk":3,"model":"cars.make","fields":{"name":"daewoo","friendly_name":"Daewoo"}},
+{"pk":4,"model":"cars.make","fields":{"name":"daimler","friendly_name":"Daimler"}},
+{"pk":5,"model":"cars.make","fields":{"name":"ford","friendly_name":"Ford"}},
+{"pk":6,"model":"cars.make","fields":{"name":"mercedes","friendly_name":"Mercedes"}},
+{"pk":7,"model":"cars.make","fields":{"name":"mitsubishi","friendly_name":"Mitsubishi"}},
+{"pk":8,"model":"cars.make","fields":{"name":"tesla","friendly_name":"Tesla"}},
+{"pk":9,"model":"cars.make","fields":{"name":"toyota","friendly_name":"Toyota"}},
+{"pk":10,"model":"cars.make","fields":{"name":"vauxhall","friendly_name":"Vauxhall"}},
+{"pk":11,"model":"cars.make","fields":{"name":"vaz","friendly_name":"VAZ"}}]
