@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.db.models import Q
-from .models import Car
+from .models import Car, Make
 
 # Create your views here.
 
@@ -10,8 +10,15 @@ def all_cars(request):
 
     cars = Car.objects.all()
     query = None
+    makes = None
 
     if request.GET:
+
+        if 'make' in request.GET:
+            makes = request.GET['make'].split(',')
+            cars = cars.filter(category__name__in=makes)
+            makes = Make.objects.filter(name__in=makes)
+
         if 'q' in request.GET:
             query = request.GET['q']
             if not query:
@@ -24,6 +31,7 @@ def all_cars(request):
     context = {
         'cars': cars,
         'search_term': query,
+        'current_makes': makes,
     }
 
     return render(request, 'cars/cars.html', context)

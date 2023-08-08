@@ -5,9 +5,43 @@
       "fields": {
         "sku": "auditt",
         "name": "Audi TT",
-        "description": "Bootcut jeans in our just-right original fit are comfortable and look great too.  5-pocket style sits below waist straight fit through seat and thigh bootcut leg 18\" leg opening cotton washable imported extended sizes and washes available online only",
+        "description": "Year: 2007
+                        Make: Audi
+                        Model: TT
+                        Transmission: Manual
+                        Exterior Color: Grey
+                        Interior Color: Black Leather
+                        Engine: Turbocharged
+                        
+                        Key Features:
+                        
+                        Engine and Performance:
+                        
+                        Turbocharged engine for optimal power and efficiency.
+                        Manual transmission for an engaging driving experience.
+                        
+                        Exterior:
+                        
+                        Striking and modern grey exterior.
+                        Iconic and aggressive Singleframe grille.
+                        Sporty and aerodynamic design cues.
+                        
+                        Interior:
+                        
+                        Driver-focused cockpit for a true connection between car and driver.
+                        Premium materials throughout the interior.
+                        Advanced infotainment system to keep you connected and entertained.
+
+                        Safety and Handling:
+                        
+                        Advanced safety features to keep you secure on the road.
+                        Responsive handling for an exhilarating driving experience.
+                        
+                        Mileage: 115223 km
+                        
+                        Price: EUR 7000",
         "price": 7000,
-        "category": 6,
+        "category": 1,
         "image_url": "https://res.cloudinary.com/drgwkbuet/image/upload/v1691423964/a6_ha2pgh.jpg",
         "image": "a6.jpg"
       }
@@ -18,7 +52,41 @@
       "fields": {
         "sku": "bmw320",
         "name": "BMW 320",
-        "description": "Straight-leg styling and on-the-job comfort make our Audra pants a flattering business decision. flat front zip fly with hook-and-bar closure 2 front and 2 back welt pockets 34 1/2\" inseam polyester/rayon/spandex washable imported",
+        "description": "Year: 2006
+                        Make: BMW
+                        Model: 320
+                        Transmission: Automatic
+                        Exterior Color: Black
+                        Interior Color: Beige Leather
+                        
+                        Key Features:
+                        
+                        Engine and Performance:
+                        
+                        Smooth and responsive automatic transmission.
+                        Fuel-efficient engine with impressive horsepower.
+                        Rear-wheel drive for a dynamic driving experience.
+                        
+                        Exterior:
+                        
+                        Elegant black exterior that exudes luxury.
+                        Iconic BMW kidney grille and distinctive design elements.
+                        Well-maintained paint and exterior features.
+                        
+                        Interior:
+                        
+                        Luxurious beige leather interior creating a comfortable and inviting atmosphere.
+                        Spacious seating with ample legroom and headroom.
+                        Advanced infotainment system for entertainment and navigation.
+
+                        Safety and Handling:
+                        
+                        Comprehensive safety features to protect you and your passengers.
+                        Precise steering and agile handling for city and highway driving.
+                        
+                        Mileage: 91118 mls
+                        
+                        Price: EUR 1500",
         "price": 1500,
         "category": 2,
         "image_url": "https://res.cloudinary.com/drgwkbuet/image/upload/v1691424057/32_vtzzca.jpg",
