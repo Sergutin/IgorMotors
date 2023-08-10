@@ -1,98 +1,32 @@
 [
-    {
-      "pk": 1,
-      "model": "cars.car",
-      "fields": {
-        "sku": "auditt",
-        "name": "Audi TT",
-        "description": "Year: 2007
-                        Make: Audi
-                        Model: TT
-                        Transmission: Manual
-                        Exterior Color: Grey
-                        Interior Color: Black Leather
-                        Engine: Turbocharged
-                        
-                        Key Features:
-                        
-                        Engine and Performance:
-                        
-                        Turbocharged engine for optimal power and efficiency.
-                        Manual transmission for an engaging driving experience.
-                        
-                        Exterior:
-                        
-                        Striking and modern grey exterior.
-                        Iconic and aggressive Singleframe grille.
-                        Sporty and aerodynamic design cues.
-                        
-                        Interior:
-                        
-                        Driver-focused cockpit for a true connection between car and driver.
-                        Premium materials throughout the interior.
-                        Advanced infotainment system to keep you connected and entertained.
-
-                        Safety and Handling:
-                        
-                        Advanced safety features to keep you secure on the road.
-                        Responsive handling for an exhilarating driving experience.
-                        
-                        Mileage: 115223 km
-                        
-                        Price: EUR 7000",
-        "price": 7000,
-        "category": 1,
-        "image_url": "https://res.cloudinary.com/drgwkbuet/image/upload/v1691423964/a6_ha2pgh.jpg",
-        "image": "a6.jpg"
-      }
-    },
-    {
-      "pk": 2,
-      "model": "cars.car",
-      "fields": {
-        "sku": "bmw320",
-        "name": "BMW 320",
-        "description": "Year: 2006
-                        Make: BMW
-                        Model: 320
-                        Transmission: Automatic
-                        Exterior Color: Black
-                        Interior Color: Beige Leather
-                        
-                        Key Features:
-                        
-                        Engine and Performance:
-                        
-                        Smooth and responsive automatic transmission.
-                        Fuel-efficient engine with impressive horsepower.
-                        Rear-wheel drive for a dynamic driving experience.
-                        
-                        Exterior:
-                        
-                        Elegant black exterior that exudes luxury.
-                        Iconic BMW kidney grille and distinctive design elements.
-                        Well-maintained paint and exterior features.
-                        
-                        Interior:
-                        
-                        Luxurious beige leather interior creating a comfortable and inviting atmosphere.
-                        Spacious seating with ample legroom and headroom.
-                        Advanced infotainment system for entertainment and navigation.
-
-                        Safety and Handling:
-                        
-                        Comprehensive safety features to protect you and your passengers.
-                        Precise steering and agile handling for city and highway driving.
-                        
-                        Mileage: 91118 mls
-                        
-                        Price: EUR 1500",
-        "price": 1500,
-        "category": 2,
-        "image_url": "https://res.cloudinary.com/drgwkbuet/image/upload/v1691424057/32_vtzzca.jpg",
-        "image": "32.jpg"
-      }
-    },
+  {
+    "pk": 1,
+    "model": "cars.car",
+    "fields": {
+      "sku": "auditt",
+      "name": "Audi TT",
+      "description": "Year: 2007 Make: Audi Model: TT Transmission: Manual Exterior Color: Grey Interior Color: Black Leather Engine: Turbocharged Key Features: Engine and Performance: Turbocharged engine for optimal power and efficiency. Manual transmission for an engaging driving experience. Exterior: Striking and modern grey exterior. Iconic and aggressive Singleframe grille. Sporty and aerodynamic design cues. Interior: Driver-focused cockpit for a true connection between car and driver. Premium materials throughout the interior. Advanced infotainment system to keep you connected and entertained. Safety and Handling: Advanced safety features to keep you secure on the road. Responsive handling for an exhilarating driving experience. Mileage: 115223 km Price: EUR 7000",
+      "price": 7000,
+      "category": 1,
+      "image_url": "https://res.cloudinary.com/drgwkbuet/image/upload/v1691423964/a6_ha2pgh.jpg",
+      "image": "a6.jpg",
+      "year": "2007"
+    }
+  },
+  {
+    "pk": 2,
+    "model": "cars.car",
+    "fields": {
+      "sku": "bmw320",
+      "name": "BMW 320",
+      "description": "Year: 2006 Make: BMW Model: 320 Transmission: Automatic Exterior Color: Black Interior Color: Beige Leather Key Features: Engine and Performance: Smooth and responsive automatic transmission. Fuel-efficient engine with impressive horsepower. Rear-wheel drive for a dynamic driving experience. Exterior: Elegant black exterior that exudes luxury. Iconic BMW kidney grille and distinctive design elements. Well-maintained paint and exterior features. Interior: Luxurious beige leather interior creating a comfortable and inviting atmosphere. Spacious seating with ample legroom and headroom. Advanced infotainment system for entertainment and navigation. Safety and Handling: Comprehensive safety features to protect you and your passengers. Precise steering and agile handling for city and highway driving. Mileage: 91118 mls Price: EUR 1500",
+      "price": 1500,
+      "category": 2,
+      "image_url": "https://res.cloudinary.com/drgwkbuet/image/upload/v1691424057/32_vtzzca.jpg",
+      "image": "32.jpg",
+      "year": "2006"
+    }
+  },
     {
       "pk": 3,
       "model": "cars.car",
@@ -103,7 +37,8 @@
         "price": 15000,
         "category": 2,
         "image_url": "https://res.cloudinary.com/drgwkbuet/image/upload/v1691423676/51_uqkt8p.jpg",
-        "image": "51.jpg"
+        "image": "51.jpg",
+        "year": "2015"
       }
     },
     {
@@ -116,7 +51,8 @@
         "price": 3000,
         "category": 3,
         "image_url": "https://res.cloudinary.com/drgwkbuet/image/upload/v1691424134/n4_l4h4d3.jpg",
-        "image": "n4.jpg"
+        "image": "n4.jpg",
+        "year": "2002"
       }
     },
     {
@@ -129,7 +65,8 @@
         "price": 1000000,
         "category": 4,
         "image_url": "https://res.cloudinary.com/drgwkbuet/image/upload/v1691424188/d4_itwcwj.jpg",
-        "image": "d4.jpg"
+        "image": "d4.jpg",
+        "year": "1971"
       }
     },
     {
@@ -142,7 +79,8 @@
         "price": 8000,
         "category": 5,
         "image_url": "https://res.cloudinary.com/drgwkbuet/image/upload/v1691424227/f_by6exf.jpg",
-        "image": "f.jpg"
+        "image": "f.jpg",
+        "year": "2013"
       }
     },
     {
@@ -155,7 +93,8 @@
         "price": 16500,
         "category": 6,
         "image_url": "https://res.cloudinary.com/drgwkbuet/image/upload/v1691424301/m_s5smh1.jpg",
-        "image": "m.jpg"
+        "image": "m.jpg",
+        "year": "2016"
       }
     },
     {
@@ -168,7 +107,8 @@
         "price": 5000,
         "category": 6,
         "image_url": "https://res.cloudinary.com/drgwkbuet/image/upload/v1691423696/220_ofjklk.jpg",
-        "image": "220.jpg"
+        "image": "220.jpg",
+        "year": "1999"
       }
     },
     {
@@ -181,7 +121,8 @@
         "price": 16800,
         "category": 7,
         "image_url": "https://res.cloudinary.com/drgwkbuet/image/upload/v1691424344/c_lmqf89.jpg",
-        "image": "c.jpg"
+        "image": "c.jpg",
+        "year": "2006"
       }
     },
     {
@@ -194,7 +135,8 @@
         "price": 35000,
         "category": 8,
         "image_url": "https://res.cloudinary.com/drgwkbuet/image/upload/v1691424588/t3_nvo4is.jpg",
-        "image": "t3.jpg"
+        "image": "t3.jpg",
+        "year": "2020"
       }
     },
     {
@@ -207,7 +149,8 @@
         "price": 2750,
         "category": 9,
         "image_url": "https://res.cloudinary.com/drgwkbuet/image/upload/v1691424628/y_pfjwk6.jpg",
-        "image": "y.jpg"
+        "image": "y.jpg",
+        "year": "2007"
       }
     },
     {
@@ -220,7 +163,8 @@
         "price": 4000,
         "category": 10,
         "image_url": "https://res.cloudinary.com/drgwkbuet/image/upload/v1691424661/v4_ustz5y.jpg",
-        "image": "v4.jpg"
+        "image": "v4.jpg",
+        "year": "2010"
       }
     },
     {
@@ -233,7 +177,8 @@
         "price": 1000,
         "category": 11,
         "image_url": "https://res.cloudinary.com/drgwkbuet/image/upload/v1691424699/2107_ldkhdr.jpg",
-        "image": "2107.jpg"
+        "image": "2107.jpg",
+        "year": "1993"
       }
     }
   ]

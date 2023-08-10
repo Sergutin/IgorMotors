@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
-from django.db.models import Q
+from django.db.models import Q, F, IntegerField
+from django.db.models.functions import Lower
 from .models import Car, Make
 
 # Create your views here.
@@ -11,8 +12,32 @@ def all_cars(request):
     cars = Car.objects.all()
     query = None
     makes = None
+    sort = None
+    direction = None
 
     if request.GET:
+        if 'sort' in request.GET:
+            sortkey = request.GET['sort']
+            sort = sortkey
+            if sortkey == 'name':
+                sortkey = 'lower_name'
+                cars = cars.annotate(lower_name=Lower('name'))
+
+            if sortkey == 'make':  
+                sortkey = 'make_name'  
+                cars = cars.annotate(make_name=F('category__name')) 
+
+            # NOT WORKING!!! - sorting by name instead
+            if sortkey == 'year':
+                sortkey = 'lower_year'
+                cars = cars.annotate(lower_year=Lower('year'))
+
+            if 'direction' in request.GET:
+                direction = request.GET['direction']
+                if direction == 'desc':
+                    sortkey = f'-{sortkey}'
+            cars = cars.order_by(sortkey)
+
 
         if 'make' in request.GET:
             makes = request.GET['make'].split(',')
@@ -28,10 +53,13 @@ def all_cars(request):
             queries = Q(name__icontains=query) | Q(description__icontains=query)
             cars = cars.filter(queries)
 
+    current_sorting = f'{sort}_{direction}'
+
     context = {
         'cars': cars,
         'search_term': query,
         'current_makes': makes,
+        'current_sorting': current_sorting,
     }
 
     return render(request, 'cars/cars.html', context)

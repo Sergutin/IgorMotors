@@ -11,6 +11,7 @@ class CarAdmin(admin.ModelAdmin):
         'category',
         'price',
         'image',
+        'year', # Added for year sorting test
     )
 
     ordering = ('sku',)
