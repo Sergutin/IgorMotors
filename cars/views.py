@@ -24,10 +24,12 @@ def all_cars(request):
                 cars = cars.annotate(lower_name=Lower('name'))
 
             if sortkey == 'make':  
-                sortkey = 'make_name'  
-                cars = cars.annotate(make_name=F('category__name')) 
+                sortkey = 'make_name'
+                cars = cars.annotate(make_name=F('category__name'))
 
-            # NOT WORKING!!! - sorting by name instead
+            # if sortkey == 'category':
+            #     sortkey = 'category__name'
+
             if sortkey == 'year':
                 sortkey = 'lower_year'
                 cars = cars.annotate(lower_year=Lower('year'))
