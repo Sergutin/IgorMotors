@@ -49,7 +49,7 @@ def add_to_bag(request, item_id):
                               f'quantity to {bag[item_id]}'))
         else:
             bag[item_id] = quantity
-            messages.success(request, f'Added {car.name} to your bag')
+            messages.success(request, f'Added {car.name} to your garage')
 
     request.session['bag'] = bag
     return redirect(redirect_url)
@@ -89,7 +89,7 @@ def adjust_bag(request, item_id):
             bag.pop(item_id)
             messages.success(request,
                              (f'Removed {car.name} '
-                              f'from your bag'))
+                              f'from your garage'))
 
     request.session['bag'] = bag
     return redirect(reverse('view_bag'))
@@ -114,7 +114,7 @@ def remove_from_bag(request, item_id):
                               f'{car.name} from your bag'))
         else:
             bag.pop(item_id)
-            messages.success(request, f'Removed {car.name} from your bag')
+            messages.success(request, f'Removed {car.name} from your garage')
 
         request.session['bag'] = bag
         return HttpResponse(status=200)
