@@ -13,7 +13,7 @@ def view_bag(request):
 
 
 def add_to_bag(request, item_id):
-    """ Add a quantity of the specified car to the shopping bag """
+    """ Add a quantity of the specified car or product to the shopping bag """
 
     car = get_object_or_404(Car, pk=item_id)
     quantity = int(request.POST.get('quantity'))
@@ -56,7 +56,7 @@ def add_to_bag(request, item_id):
 
 
 def adjust_bag(request, item_id):
-    """Adjust the quantity of the specified car to the specified amount"""
+    """Adjust the quantity of the specified car or product to the specified amount"""
 
     car = get_object_or_404(Car, pk=item_id)
     quantity = int(request.POST.get('quantity'))
@@ -96,7 +96,7 @@ def adjust_bag(request, item_id):
 
 
 def remove_from_bag(request, item_id):
-    """Remove the car from the shopping bag"""
+    """Remove the car or product from the shopping bag"""
 
     try:
         car = get_object_or_404(Car, pk=item_id)
