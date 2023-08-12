@@ -31,7 +31,7 @@
                                     <th scope="col">Car Info</th>
                                     <th scope="col"></th>
                                     <th scope="col">Price</th>
-                                    <th scope="col" >Qty</th>
+                                    <th scope="col" style="display: none;">Qty</th>
                                     <th scope="col">Subtotal</th>
                                 </tr>
                             </thead>
@@ -48,7 +48,7 @@
                                     <td class="py-3">
                                         <p class="my-0">€{{ item.car.price }}</p>
                                     </td>
-                                    <td class="py-3 w-25">
+                                    <td class="py-3 w-25" style="display: none;">
                                         <form class="form update-form" method="POST" action="{% url 'adjust_bag' item.item_id %}">
                                             {% csrf_token %}
                                             <div class="form-group">
@@ -79,11 +79,14 @@
                                                 </div>
                                             </div>
                                         </form>
-                                        <a class="update-link text-info"><small>Update</small></a>
-                                        <a class="remove-item text-danger float-right" id="remove_{{ item.item_id }}" data-car_size="{{ item.size }}"><small>Remove</small></a>
+                                        <a class="update-link text-info" style="display: none;"><small>Update</small></a>
+                                        <!-- <a class="remove-item text-danger float-right" id="remove_{{ item.item_id }}" data-car_size="{{ item.size }}"><small>Remove</small></a> -->
                                     </td>
                                     <td class="py-3">
                                         <p class="my-0">€{{ item.car.price | calc_subtotal:item.quantity }}</p>
+                                    </td>
+                                    <td class="py-3">
+                                        <a class="remove-item text-danger float-right" id="remove_{{ item.item_id }}" data-car_size="{{ item.size }}"><small>Remove</small></a>
                                     </td>
                                 </tr>
                             {% endfor %}
