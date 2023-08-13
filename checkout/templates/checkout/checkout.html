@@ -49,9 +49,9 @@
                     </div>
                     <div class="col-7">
                         <p class="my-0"><strong>{{ item.car.name }}</strong></p>
-                        <p class="my-0 small">Size:
+                        <p class="my-0 small" style="display: none;">Size:
                             {% if item.car.has_sizes %}{{ item.size|upper }}{% else %}N/A{% endif %}</p>
-                        <p class="my-0 small text-muted">Qty: {{ item.quantity }}</p>
+                        <p class="my-0 small text-muted" style="display: none;">Qty: {{ item.quantity }}</p>
                     </div>
                     <div class="col-3 text-right">
                         <p class="my-0 small text-muted">€{{ item.car.price | calc_subtotal:item.quantity }}</p>
@@ -137,4 +137,11 @@
             </div>
         </div>
     </div>
+{% endblock %}
+
+{% block postloadjs %}
+    {{ block.super }}
+    {{ stripe_public_key|json_script:"id_stripe_public_key" }}
+    {{ client_secret|json_script:"id_client_secret" }}
+    <script src="{% static 'checkout/js/stripe_elements.js' %}"></script>
 {% endblock %}
