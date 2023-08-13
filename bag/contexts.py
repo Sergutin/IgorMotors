@@ -25,7 +25,7 @@ def bag_contents(request):
             car = get_object_or_404(Car, pk=item_id)
             for size, quantity in item_data['items_by_size'].items():
                 total += quantity * car.price
-                product_count += quantity
+                car_count += quantity
                 bag_items.append({
                     'item_id': item_id,
                     'quantity': quantity,
