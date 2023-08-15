@@ -53,7 +53,7 @@ def all_cars(request):
             if not query:
                 messages.error(request, "You didn't enter any search criteria!")
                 return redirect(reverse('cars'))
-            
+
             queries = Q(name__icontains=query) | Q(description__icontains=query)
             cars = cars.filter(queries)
 
@@ -97,6 +97,30 @@ def add_car(request):
     template = 'cars/add_car.html'
     context = {
         'form': form,
+    }
+
+    return render(request, template, context)
+
+
+def edit_car(request, car_id):
+    """ Edit a car in the store """
+    car = get_object_or_404(Car, pk=car_id)
+    if request.method == 'POST':
+        form = CarForm(request.POST, request.FILES, instance=car)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Successfully updated car!')
+            return redirect(reverse('car_detail', args=[car.id]))
+        else:
+            messages.error(request, 'Failed to update car. Please ensure the form is valid.')
+    else:
+        form = CarForm(instance=car)
+        messages.info(request, f'You are editing {car.name}')
+
+    template = 'cars/edit_car.html'
+    context = {
+        'form': form,
+        'car': car,
     }
 
     return render(request, template, context)
