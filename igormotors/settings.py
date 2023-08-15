@@ -26,7 +26,7 @@ SECRET_KEY = 'to_be_added'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-sergutin-igormotors-zv7ndcaj2sj.ws-eu103.gitpod.io', 'https://8000-sergutin-igormotors-pfgnbpvgaed.ws-eu102.gitpod.io']
+ALLOWED_HOSTS = ['8000-sergutin-igormotors-400gf73nwbb.ws-eu103.gitpod.io', 'https://8000-sergutin-igormotors-pfgnbpvgaed.ws-eu102.gitpod.io']
 
 
 # Application definition
