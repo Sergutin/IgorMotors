@@ -80,9 +80,20 @@ def car_detail(request, car_id):
 
     return render(request, 'cars/car_detail.html', context)
 
+
 def add_car(request):
     """ Add a car to the store """
-    form = CarForm()
+    if request.method == 'POST':
+        form = CarForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Successfully added car!')
+            return redirect(reverse('add_car'))
+        else:
+            messages.error(request, 'Failed to add car. Please ensure the form is valid.')
+    else:
+        form = CarForm()
+        
     template = 'cars/add_car.html'
     context = {
         'form': form,
