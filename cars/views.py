@@ -86,9 +86,9 @@ def add_car(request):
     if request.method == 'POST':
         form = CarForm(request.POST, request.FILES)
         if form.is_valid():
-            form.save()
+            car = form.save()
             messages.success(request, 'Successfully added car!')
-            return redirect(reverse('add_car'))
+            return redirect(reverse('car_detail', args=[car.id]))
         else:
             messages.error(request, 'Failed to add car. Please ensure the form is valid.')
     else:
@@ -124,3 +124,10 @@ def edit_car(request, car_id):
     }
 
     return render(request, template, context)
+
+def delete_car(request, car_id):
+    """ Delete a car from the store """
+    car = get_object_or_404(Car, pk=car_id)
+    car.delete()
+    messages.success(request, 'Car deleted!')
+    return redirect(reverse('cars'))
