@@ -2,7 +2,9 @@ from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.db.models import Q, F, IntegerField
 from django.db.models.functions import Lower
+
 from .models import Car, Make
+from .forms import CarForm
 
 # Create your views here.
 
@@ -77,3 +79,13 @@ def car_detail(request, car_id):
     }
 
     return render(request, 'cars/car_detail.html', context)
+
+def add_car(request):
+    """ Add a car to the store """
+    form = CarForm()
+    template = 'cars/add_car.html'
+    context = {
+        'form': form,
+    }
+
+    return render(request, template, context)
