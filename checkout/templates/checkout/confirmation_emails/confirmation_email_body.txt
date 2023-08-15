@@ -1,0 +1,24 @@
+Hello {{ order.full_name }}!
+
+We are excited to confirm your recent order at Igor Motors, your trusted Car Dealership. Please review your order details below:
+
+Order Number: {{ order.order_number }}
+Order Date: {{ order.date }}
+
+Order Total: €{{ order.order_total }}
+Delivery: €{{ order.delivery_cost }}
+Grand Total: €{{ order.grand_total }}
+
+Your selected car will soon be on its way to you. Here are the delivery details:
+Shipping Address: {{ order.street_address1 }}, {{ order.town_or_city }}, {{ order.country }}
+
+In case we need to reach you, we have your phone number on file: {{ order.phone_number }}.
+
+Should you have any inquiries or need assistance, please don't hesitate to contact us at {{ contact_email }}.
+
+Thank you for choosing Igor Motors for your automotive needs. We appreciate your business!
+
+Best Regards,
+
+The Igor Motors Team
+
