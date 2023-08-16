@@ -182,15 +182,6 @@ def view_favorites(request):
 
     return render(request, 'cars/favorites.html', context)
 
-def contact(request):
-    if request.method == 'POST':
-        subject = request.POST.get('subject')
-        message = request.POST.get('message')
-        messages.success(request, 'Your message has been sent. We will get back to you soon.')
-        return redirect('contact')
-
-    return render(request, 'cars/contact.html')
-
 
 def contact(request):
     if request.method == 'POST':
