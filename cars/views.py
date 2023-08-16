@@ -3,9 +3,10 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q, F, IntegerField
 from django.db.models.functions import Lower
+from django.core.mail import send_mail
 
 from .models import Car, Make, Favorite
-from .forms import CarForm
+from .forms import CarForm, ContactForm
 
 # Create your views here.
 
@@ -180,3 +181,39 @@ def view_favorites(request):
     }
 
     return render(request, 'cars/favorites.html', context)
+
+def contact(request):
+    if request.method == 'POST':
+        subject = request.POST.get('subject')
+        message = request.POST.get('message')
+        messages.success(request, 'Your message has been sent. We will get back to you soon.')
+        return redirect('contact')
+
+    return render(request, 'cars/contact.html')
+
+
+def contact(request):
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            subject = form.cleaned_data['subject']
+            from_email = form.cleaned_data['email']
+            message = form.cleaned_data['message']
+
+            # Send email
+            send_mail(
+                subject,
+                message,
+                from_email,
+                ['igor@sergutin.com'],  
+                fail_silently=False,
+            )
+
+            messages.success(request, 'Your message has been sent. We will get back to you soon.')
+            return redirect('contact')
+
+    else:
+        form = ContactForm()
+
+    context = {'form': form}
+    return render(request, 'cars/contact.html', context)

@@ -33,10 +33,10 @@
                     
                     {% if request.user.is_authenticated %}
                         <div class="mt-4">
-                            <form method="post" action="{% url 'add_to_favorites' car.id %}">
+                            <form id="favorite-form" method="post" action="{% url 'add_to_favorites' car.id %}">
                                 {% csrf_token %}
-                                <button type="submit" class="btn btn-success btn-sm add-to-favorites">
-                                    <i class="far fa-heart"></i> 
+                                <button type="button" class="btn btn-sm {% if car in request.user.favorite_set.all %}btn-danger{% else %}btn-success{% endif %} add-to-favorites">
+                                    <i class="far fa-heart"></i>
                                     <span id="favorite-button-text">
                                         {% if car in request.user.favorite_set.all %}
                                             Remove from Favorites
@@ -48,10 +48,6 @@
                             </form>
                         </div>
                     {% endif %}
-
-
-
-
 
                     {% if car.category %}
                     <p class="small mt-1 mb-0">
@@ -119,4 +115,47 @@
 {% block postloadjs %}
 {{ block.super }}
 {% include 'cars/includes/quantity_input_script.html' %}
+
+<script>
+    // Get the favorite form element, button, and success message element
+    const favoriteForm = document.getElementById('favorite-form');
+    const favoriteButton = favoriteForm.querySelector('.add-to-favorites');
+    const buttonText = favoriteForm.querySelector('#favorite-button-text');
+
+    // Add a click event listener to the button
+    favoriteButton.addEventListener('click', async function (event) {
+        event.preventDefault();
+
+        // Toggle the text and button color based on the current state
+        if (buttonText.textContent.trim() === 'Add to Favorites') {
+            buttonText.textContent = 'Remove from Favorites';
+            favoriteButton.classList.remove('btn-success');
+            favoriteButton.classList.add('btn-danger');
+        } else {
+            buttonText.textContent = 'Add to Favorites';
+            favoriteButton.classList.remove('btn-danger');
+            favoriteButton.classList.add('btn-success');
+        }
+
+        // Manually submit the form using AJAX
+        try {
+            const response = await fetch(favoriteForm.action, {
+                method: 'POST',
+                body: new FormData(favoriteForm),
+                headers: {
+                    'X-CSRFToken': "{{ csrf_token }}",
+                },
+            });
+
+            if (!response.ok) {
+                throw new Error('Request failed');
+            }
+
+            // Show the toast success alert
+            $('#favorite-success-toast').toast('show');
+        } catch (error) {
+            console.error(error);
+        }
+    });
+</script>
 {% endblock %}
