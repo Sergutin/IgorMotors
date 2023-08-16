@@ -32,6 +32,33 @@
                     <p class="lead mb-0 text-left font-weight-bold">€{{ car.price }}</p>
 
 
+
+
+
+                    {% if request.user.is_authenticated %}
+                        <div class="mt-4">
+                    {% if car in request.user.favorite_set.all %}
+                        <form method="post" action="{% url 'remove_from_favorites' car.id %}">
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn-danger btn-sm">
+                                <i class="fas fa-heart"></i> Remove from Favorites
+                            </button>
+                        </form>
+                    {% else %}
+                        <form method="post" action="{% url 'add_to_favorites' car.id %}">
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn-success btn-sm">
+                                <i class="far fa-heart"></i> Add to Favorites
+                            </button>
+                        </form>
+                    {% endif %}
+                        </div>
+                    {% endif %}
+
+
+
+
+
                     {% if car.category %}
                     <p class="small mt-1 mb-0">
                         <a class="text-muted" href="{% url 'cars' %}?make={{ car.category.name }}">

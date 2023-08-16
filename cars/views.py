@@ -4,7 +4,7 @@ from django.contrib.auth.decorators import login_required
 from django.db.models import Q, F, IntegerField
 from django.db.models.functions import Lower
 
-from .models import Car, Make
+from .models import Car, Make, Favorite
 from .forms import CarForm
 
 # Create your views here.
@@ -149,3 +149,34 @@ def delete_car(request, car_id):
     car.delete()
     messages.success(request, 'Car deleted!')
     return redirect(reverse('cars'))
+
+
+@login_required
+def add_to_favorites(request, car_id):
+    car = get_object_or_404(Car, pk=car_id)
+    Favorite.objects.get_or_create(user=request.user, car=car)
+    messages.success(request, 'Car added to favorites!')
+    return redirect('car_detail', car_id=car_id)
+
+
+@login_required
+def remove_from_favorites(request, car_id):
+    car = get_object_or_404(Car, pk=car_id)
+    Favorite.objects.filter(user=request.user, car=car).delete()
+    messages.success(request, 'Car removed from favorites.')
+    # return redirect('car_detail', car_id=car_id)
+    return redirect('favorites')
+
+
+@login_required
+def view_favorites(request):
+    """ A view to show user's favorite cars """
+
+    favorites = Favorite.objects.filter(user=request.user)  
+    favorite_cars = [favorite.car for favorite in favorites]
+
+    context = {
+        'favorite_cars': favorite_cars,
+    }
+
+    return render(request, 'cars/favorites.html', context)

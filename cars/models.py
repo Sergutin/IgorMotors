@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 
 class Make(models.Model):
@@ -20,8 +21,16 @@ class Car(models.Model):
     price = models.DecimalField(max_digits=7, decimal_places=0)
     image_url = models.URLField(max_length=1024, null=True, blank=True)
     image = models.ImageField(null=True, blank=True)
-    year = models.PositiveIntegerField(null=True, blank=True)  # Testing sort by year
+    year = models.PositiveIntegerField(null=True, blank=True)
 
 
     def __str__(self):
         return self.name
+
+
+class Favorite(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    car = models.ForeignKey(Car, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return f"{self.user.username}'s favorite: {self.car.name}"
