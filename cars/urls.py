@@ -1,5 +1,8 @@
 from django.urls import path, include
 from . import views
+from django.conf.urls import handler404
+
+handler404 = 'cars.views.handler404'
 
 urlpatterns = [
     path('', views.all_cars, name='cars'),
