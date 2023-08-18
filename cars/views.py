@@ -5,6 +5,10 @@ from django.db.models import Q, F, IntegerField
 from django.db.models.functions import Lower
 from django.core.mail import send_mail
 
+from django.http import JsonResponse
+from .models import CarMake, CarModel, CarYear, CarMileage, CarTransmission
+from .forms import CarSelectionForm
+
 from .models import Car, Make, Favorite
 from .forms import CarForm, ContactForm
 
@@ -213,3 +217,50 @@ def contact(request):
 def handler404(request, exception):
     return render(request, '404.html', status=404)
 
+
+def get_car_models(request):
+    make_id = request.GET.get('make_id')
+    models = CarModel.objects.filter(make_id=make_id)
+    model_list = [{"id": model.id, "name": model.name} for model in models]
+    return JsonResponse(model_list, safe=False)
+
+def get_car_years(request):
+    model_id = request.GET.get('model_id')
+    years = CarYear.objects.filter(model_id=model_id)
+    year_list = [{"id": year.id, "year": year.year} for year in years]
+    return JsonResponse(year_list, safe=False)
+
+def get_car_mileages(request):
+    year_id = request.GET.get('year_id')
+    mileages = CarMileage.objects.filter(year_id=year_id)
+    mileage_list = [{"id": mileage.id, "mileage": mileage.mileage} for mileage in mileages]
+    return JsonResponse(mileage_list, safe=False)
+
+def get_car_transmissions(request):
+    mileage_id = request.GET.get('mileage_id')
+    transmissions = CarTransmission.objects.filter(mileage_id=mileage_id)
+    transmission_list = [{"id": transmission.id, "transmission": transmission.transmission} for transmission in transmissions]
+    return JsonResponse(transmission_list, safe=False)
+
+
+def car_selection_view(request):
+    if request.method == 'POST':
+        form = CarSelectionForm(request.POST)
+        if form.is_valid():
+            selected_make = form.cleaned_data['car_make']
+            selected_model = form.cleaned_data['car_model']
+            selected_year = form.cleaned_data['car_year']
+            selected_mileage = form.cleaned_data['car_mileage']
+            selected_transmission = form.cleaned_data['car_transmission']
+
+
+            print("Selected Make:", selected_make)
+            print("Selected Model:", selected_model)
+            print("Selected Year:", selected_year)
+            print("Selected Mileage:", selected_mileage)
+            print("Selected Transmission:", selected_transmission)
+    else:
+        form = CarSelectionForm()
+    
+    context = {'form': form}
+    return render(request, 'cash.html', context)

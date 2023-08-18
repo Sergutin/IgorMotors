@@ -49,3 +49,24 @@ class ContactMessage(models.Model):
     
 
 
+
+class CarMake(models.Model):
+    name = models.CharField(max_length=100)
+
+class CarModel(models.Model):
+    make = models.ForeignKey(CarMake, on_delete=models.CASCADE)
+    name = models.CharField(max_length=100)
+
+class CarYear(models.Model):
+    model = models.ForeignKey(CarModel, on_delete=models.CASCADE)
+    year = models.IntegerField()
+
+class CarMileage(models.Model):
+    year = models.ForeignKey(CarYear, on_delete=models.CASCADE)
+    mileage = models.PositiveIntegerField()
+
+class CarTransmission(models.Model):
+    mileage = models.ForeignKey(CarMileage, on_delete=models.CASCADE)
+    transmission = models.CharField(max_length=20)
+
+
