@@ -30,16 +30,18 @@ class ContactForm(forms.Form):
 
 
 class CarSelectionForm(forms.Form):
-    car_make = forms.ModelChoiceField(queryset=CarMake.objects.all(), empty_label="Select Make")
-    car_model = forms.ChoiceField(choices=[], required=False)
-    car_year = forms.ChoiceField(choices=[], required=False)
-    car_mileage = forms.ChoiceField(choices=[], required=False)
-    car_transmission = forms.ChoiceField(choices=[], required=False)
+    car_make = forms.ModelChoiceField(queryset=CarMake.objects.all() | CarMake.objects.filter(name__in=[]), empty_label="Select Make")
+    car_model = forms.ChoiceField(choices=[], required=True)
+    car_year = forms.ChoiceField(choices=[], required=True)
+    car_mileage = forms.ChoiceField(choices=[], required=True)
+    car_transmission = forms.ChoiceField(choices=[], required=True)
+    car_engine = forms.ChoiceField(choices=[], required=True)
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.fields['car_make'].widget.attrs.update({'class': 'form-control'})
         self.fields['car_model'].widget.attrs.update({'class': 'form-control'})
         self.fields['car_year'].widget.attrs.update({'class': 'form-control'})
         self.fields['car_mileage'].widget.attrs.update({'class': 'form-control'})
         self.fields['car_transmission'].widget.attrs.update({'class': 'form-control'})
+        self.fields['car_engine'].widget.attrs.update({'class': 'form-control'})
+

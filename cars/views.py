@@ -252,13 +252,9 @@ def car_selection_view(request):
             selected_year = form.cleaned_data['car_year']
             selected_mileage = form.cleaned_data['car_mileage']
             selected_transmission = form.cleaned_data['car_transmission']
+            selected_engine = form.cleaned_data['car_engine']
 
 
-            print("Selected Make:", selected_make)
-            print("Selected Model:", selected_model)
-            print("Selected Year:", selected_year)
-            print("Selected Mileage:", selected_mileage)
-            print("Selected Transmission:", selected_transmission)
     else:
         form = CarSelectionForm()
     

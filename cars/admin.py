@@ -1,6 +1,7 @@
 from django.contrib import admin
 from .models import Car, Make, ContactMessage
 from django.apps import AppConfig
+from .models import CarMake, CarModel
 
 
 class CarAdmin(admin.ModelAdmin):
@@ -36,3 +37,5 @@ class CustomCarsAppConfig(AppConfig):
 admin.site.register(Car, CarAdmin)
 admin.site.register(Make, MakeAdmin)
 admin.site.register(ContactMessage, ContactMessageAdmin)
+admin.site.register(CarMake)
+admin.site.register(CarModel)

@@ -52,21 +52,41 @@ class ContactMessage(models.Model):
 
 class CarMake(models.Model):
     name = models.CharField(max_length=100)
+    
+    def __str__(self):
+        return self.name
 
 class CarModel(models.Model):
     make = models.ForeignKey(CarMake, on_delete=models.CASCADE)
     name = models.CharField(max_length=100)
 
+    def __str__(self):
+        return self.name
+
 class CarYear(models.Model):
     model = models.ForeignKey(CarModel, on_delete=models.CASCADE)
     year = models.IntegerField()
+
+    def __str__(self):
+        return str(self.year)  
 
 class CarMileage(models.Model):
     year = models.ForeignKey(CarYear, on_delete=models.CASCADE)
     mileage = models.PositiveIntegerField()
 
+    def __str__(self):
+        return str(self.mileage)  
+
 class CarTransmission(models.Model):
     mileage = models.ForeignKey(CarMileage, on_delete=models.CASCADE)
     transmission = models.CharField(max_length=20)
 
+    def __str__(self):
+        return self.transmission
 
+class CarEngine(models.Model):
+    transmission = models.ForeignKey(CarTransmission, on_delete=models.CASCADE)
+    engine = models.CharField(max_length=20)
+
+    def __str__(self):
+        return self.engine
