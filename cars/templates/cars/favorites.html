@@ -27,7 +27,7 @@
                             <img src="{{ car.image_url }}" class="card-img-top" alt="{{ car.name }}">
                             <div class="card-body">
                                 <h5 class="card-title">{{ car.name }}</h5>
-                                <p class="card-text">{{ car.description }}</p>
+                                <p class="card-text">{{ car.description|safe }}</p>
                                 <p class="card-text"><strong>Price: €{{ car.price }}</strong></p>
                                 <form method="post" action="{% url 'remove_from_favorites' car.id %}">
                                     {% csrf_token %}
