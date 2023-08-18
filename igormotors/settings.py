@@ -12,6 +12,10 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 import os
 from pathlib import Path
+import dj_database_url
+if os.path.isfile("env.py"):
+    import env
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -21,12 +25,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'to_be_added'
+SECRET_KEY = 's0#(2)c1l6)7p!9inzc)dh9(gu!2g2i4k*cn*ni6@fmr+a!a$v'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-sergutin-igormotors-ztblfx8dmxj.ws-us104.gitpod.io', 'https://8000-sergutin-igormotors-pfgnbpvgaed.ws-eu102.gitpod.io']
+ALLOWED_HOSTS = ['8000-sergutin-igormotors-l1kamxn7bfe.ws-us104.gitpod.io', 
+                 'igormotors.heroku.com', 'localhost']
 
 
 # Application definition
@@ -121,12 +126,19 @@ WSGI_APPLICATION = 'igormotors.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+
+if 'DATABASE_URL' in os.environ:
+    DATABASES = {
+        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
     }
-}
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
+    }
+
 
 
 # Password validation
