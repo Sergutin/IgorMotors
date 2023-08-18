@@ -31,7 +31,9 @@ SECRET_KEY = os.environ.get('SECRET_KEY', '')
 DEBUG = 'DEVELOPMENT' in os.environ
 
 ALLOWED_HOSTS = ['8000-sergutin-igormotors-l1kamxn7bfe.ws-us104.gitpod.io', 
-                 'igormotors.heroku.com', 'localhost']
+                 'igormotors.heroku.com', 'localhost',
+                 '.herokuapp.com',
+                 'igormotors-fa74a181bdfa.herokuapp.com']
 
 
 # Application definition
