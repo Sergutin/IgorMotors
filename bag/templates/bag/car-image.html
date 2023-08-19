@@ -1,0 +1,5 @@
+{% if item.car.image %}
+<img class="img-fluid rounded" src="{{ item.car.image.url }}" alt="{{ item.car.name }}">
+{% else %}
+<img class="img-fluid rounded" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.car.name }}">
+{% endif %}

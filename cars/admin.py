@@ -1,7 +1,7 @@
 from django.contrib import admin
-from .models import Car, Make, ContactMessage
+from .models import Car, Make, ContactMessage, CarMake, CarModel
 from django.apps import AppConfig
-from .models import CarMake, CarModel
+
 
 
 class CarAdmin(admin.ModelAdmin):

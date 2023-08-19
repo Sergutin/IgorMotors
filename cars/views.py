@@ -5,13 +5,13 @@ from django.db.models import Q, F, IntegerField
 from django.db.models.functions import Lower
 from django.core.mail import send_mail
 from django.views.generic import ListView, CreateView, UpdateView
+from django.template.loader import render_to_string
+from django.conf import settings
 
 from django.http import JsonResponse
-from .models import CarMake, CarModel, CarYear, CarMileage, CarTransmission
-from .forms import CarSelectionForm
+from .models import Car, Make, Favorite, CarMake, CarModel, CarYear, CarMileage, CarTransmission, ContactMessage
+from .forms import CarSelectionForm, CarForm, ContactForm
 
-from .models import Car, Make, Favorite
-from .forms import CarForm, ContactForm
 from django.urls import reverse_lazy
 
 
@@ -167,7 +167,6 @@ def remove_from_favorites(request, car_id):
     car = get_object_or_404(Car, pk=car_id)
     Favorite.objects.filter(user=request.user, car=car).delete()
     messages.success(request, 'Car removed from favorites.')
-    # return redirect('car_detail', car_id=car_id)
     return redirect('favorites')
 
 
@@ -211,7 +210,6 @@ def contact(request):
 
     context = {'form': form}
     return render(request, 'cars/contact.html', context)
-
 
 # 404 error
 
