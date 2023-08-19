@@ -102,7 +102,7 @@ def add_car(request):
             messages.error(request, 'Failed to add car. Please ensure the form is valid.')
     else:
         form = CarForm()
-        
+
     template = 'cars/add_car.html'
     context = {
         'form': form,
@@ -140,10 +140,11 @@ def edit_car(request, car_id):
 
     return render(request, template, context)
 
+
 @login_required
 def delete_car(request, car_id):
     """ Delete a car from the store """
-    
+
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do that.')
         return redirect(reverse('home'))
@@ -183,6 +184,7 @@ def view_favorites(request):
 
     return render(request, 'cars/favorites.html', context)
 
+
 # Contact Us
 
 def contact(request):
@@ -211,11 +213,6 @@ def contact(request):
     context = {'form': form}
     return render(request, 'cars/contact.html', context)
 
-# 404 error
-
-def handler404(request, exception):
-    return render(request, '404.html', status=404)
-
 # Cash for Cars
 
 def get_car_models(request):
@@ -224,11 +221,13 @@ def get_car_models(request):
     model_list = [{"id": model.id, "name": model.name} for model in models]
     return JsonResponse(model_list, safe=False)
 
+
 def get_car_years(request):
     model_id = request.GET.get('model_id')
     years = CarYear.objects.filter(model_id=model_id)
     year_list = [{"id": year.id, "year": year.year} for year in years]
     return JsonResponse(year_list, safe=False)
+
 
 def get_car_mileages(request):
     year_id = request.GET.get('year_id')
@@ -236,11 +235,13 @@ def get_car_mileages(request):
     mileage_list = [{"id": mileage.id, "mileage": mileage.mileage} for mileage in mileages]
     return JsonResponse(mileage_list, safe=False)
 
+
 def get_car_transmissions(request):
     mileage_id = request.GET.get('mileage_id')
     transmissions = CarTransmission.objects.filter(mileage_id=mileage_id)
     transmission_list = [{"id": transmission.id, "transmission": transmission.transmission} for transmission in transmissions]
     return JsonResponse(transmission_list, safe=False)
+
 
 def car_selection_view(request):
     if request.method == 'POST':
@@ -255,6 +256,6 @@ def car_selection_view(request):
 
     else:
         form = CarSelectionForm()
-    
+
     context = {'form': form}
     return render(request, 'cash.html', context)
