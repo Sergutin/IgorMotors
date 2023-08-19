@@ -28,6 +28,7 @@ class Car(models.Model):
     def __str__(self):
         return self.name
 
+# Favorite
 
 class Favorite(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
@@ -36,6 +37,8 @@ class Favorite(models.Model):
     def __str__(self):
         return f"{self.user.username}'s favorite: {self.car.name}"
 
+
+# Contact Us
 
 class ContactMessage(models.Model):
     name = models.CharField(max_length=100)
@@ -49,7 +52,8 @@ class ContactMessage(models.Model):
     
 
 
-
+# Cash for Cars feature
+ 
 class CarMake(models.Model):
     name = models.CharField(max_length=100)
     

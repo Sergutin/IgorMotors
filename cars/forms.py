@@ -21,6 +21,7 @@ class CarForm(forms.ModelForm):
         for field_name, field in self.fields.items():
             field.widget.attrs['class'] = 'border-black rounded-0'
 
+# Contact Us
 
 class ContactForm(forms.Form):
     name = forms.CharField(max_length=100)
@@ -28,6 +29,7 @@ class ContactForm(forms.Form):
     subject = forms.CharField(max_length=200)
     message = forms.CharField(label=_('Message'), widget=forms.Textarea(attrs={'rows': 5}), required=True)
 
+# Cash for Cars
 
 class CarSelectionForm(forms.Form):
     car_make = forms.ModelChoiceField(queryset=CarMake.objects.all() | CarMake.objects.filter(name__in=[]), empty_label="Select Make")

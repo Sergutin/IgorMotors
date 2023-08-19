@@ -15,9 +15,6 @@ from .forms import CarForm, ContactForm
 from django.urls import reverse_lazy
 
 
-
-# Create your views here.
-
 def all_cars(request):
     """ A view to show all cars """
 
@@ -38,9 +35,6 @@ def all_cars(request):
             if sortkey == 'make':  
                 sortkey = 'make_name'
                 cars = cars.annotate(make_name=F('category__name'))
-
-            # if sortkey == 'category':
-            #     sortkey = 'category__name'
 
             if sortkey == 'year':
                 sortkey = 'lower_year'
@@ -190,6 +184,7 @@ def view_favorites(request):
 
     return render(request, 'cars/favorites.html', context)
 
+# Contact Us
 
 def contact(request):
     if request.method == 'POST':
@@ -218,9 +213,12 @@ def contact(request):
     return render(request, 'cars/contact.html', context)
 
 
+# 404 error
+
 def handler404(request, exception):
     return render(request, '404.html', status=404)
 
+# Cash for Cars
 
 def get_car_models(request):
     make_id = request.GET.get('make_id')
@@ -246,7 +244,6 @@ def get_car_transmissions(request):
     transmission_list = [{"id": transmission.id, "transmission": transmission.transmission} for transmission in transmissions]
     return JsonResponse(transmission_list, safe=False)
 
-
 def car_selection_view(request):
     if request.method == 'POST':
         form = CarSelectionForm(request.POST)
@@ -258,11 +255,8 @@ def car_selection_view(request):
             selected_transmission = form.cleaned_data['car_transmission']
             selected_engine = form.cleaned_data['car_engine']
 
-
     else:
         form = CarSelectionForm()
     
     context = {'form': form}
     return render(request, 'cash.html', context)
-
-
