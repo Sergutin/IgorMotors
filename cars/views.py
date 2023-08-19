@@ -1,8 +1,8 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-from django.db.models import Q, F, IntegerField
-from django.db.models.functions import Lower
+from django.db.models import Q, F, IntegerField, CharField
+from django.db.models.functions import Lower, Cast
 from django.core.mail import send_mail
 from django.views.generic import ListView, CreateView, UpdateView
 from django.template.loader import render_to_string
@@ -37,8 +37,10 @@ def all_cars(request):
                 cars = cars.annotate(make_name=F('category__name'))
 
             if sortkey == 'year':
-                sortkey = 'lower_year'
-                cars = cars.annotate(lower_year=Lower('year'))
+                # sortkey = 'lower_year'
+                sortkey = 'year_text'
+                # cars = cars.annotate(lower_year=Lower('year')
+                cars = cars.annotate(year_text=Cast('year', CharField()))
 
             if 'direction' in request.GET:
                 direction = request.GET['direction']
