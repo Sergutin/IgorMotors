@@ -2,7 +2,6 @@ from django.urls import path, include
 from . import views
 from django.conf.urls import handler404
 
-handler404 = 'cars.views.handler404'
 
 urlpatterns = [
     path('', views.all_cars, name='cars'),
@@ -15,5 +14,4 @@ urlpatterns = [
     path('remove_from_favorites/<int:car_id>/', views.remove_from_favorites, name='remove_from_favorites'),
     path('contact/', views.contact, name='contact'),
     path('cash/', views.car_selection_view, name='cash'),
-
 ]
