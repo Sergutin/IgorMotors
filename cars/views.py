@@ -4,6 +4,7 @@ from django.contrib.auth.decorators import login_required
 from django.db.models import Q, F, IntegerField
 from django.db.models.functions import Lower
 from django.core.mail import send_mail
+from django.views.generic import ListView, CreateView, UpdateView
 
 from django.http import JsonResponse
 from .models import CarMake, CarModel, CarYear, CarMileage, CarTransmission
@@ -11,6 +12,9 @@ from .forms import CarSelectionForm
 
 from .models import Car, Make, Favorite
 from .forms import CarForm, ContactForm
+from django.urls import reverse_lazy
+
+
 
 # Create your views here.
 
@@ -260,3 +264,5 @@ def car_selection_view(request):
     
     context = {'form': form}
     return render(request, 'cash.html', context)
+
+

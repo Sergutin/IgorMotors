@@ -44,4 +44,3 @@ class CarSelectionForm(forms.Form):
         self.fields['car_mileage'].widget.attrs.update({'class': 'form-control'})
         self.fields['car_transmission'].widget.attrs.update({'class': 'form-control'})
         self.fields['car_engine'].widget.attrs.update({'class': 'form-control'})
-
