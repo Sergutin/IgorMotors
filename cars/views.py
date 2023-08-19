@@ -194,17 +194,25 @@ def contact(request):
         form = ContactForm(request.POST)
         if form.is_valid():
             subject = form.cleaned_data['subject']
-            from_email = form.cleaned_data['email']
+            email = form.cleaned_data['email']
             message = form.cleaned_data['message']
 
             # Send email
             send_mail(
                 subject,
-                message,
-                from_email,
-                ['igor@sergutin.com'],  
+                f"From: {email}\n\n{message}",  
+                email,  
+                ['igor@sergutin.com'],
                 fail_silently=False,
             )
+
+            # send_mail(
+            #     subject,
+            #     message,
+            #     from_email,
+            #     ['igor@sergutin.com'],  
+            #     fail_silently=False,
+            # )
 
             messages.success(request, 'Your message has been sent. We will get back to you soon.')
             return redirect('contact')
