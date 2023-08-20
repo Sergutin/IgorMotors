@@ -1,6 +1,6 @@
 from django import forms
 from .widgets import CustomClearableFileInput
-from .models import Car, Make, CarMake
+from .models import Car, Make, CarMake, CarModel, CarYear, CarMileage, CarTransmission, CarEngine
 from django.utils.translation import gettext_lazy as _
 
 
