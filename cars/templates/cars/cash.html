@@ -80,7 +80,7 @@
             $('#id_car_year').change(function() {
                 var yearId = $(this).val();
                 $.ajax({
-                    url: '/get_car_mileages/',
+                    url: '/cars/get_car_mileages/',
                     data: {'year_id': yearId},
                     success: function(data) {
                         var options = '<option value="">Select Mileage</option>';
@@ -96,7 +96,7 @@
             $('#id_car_mileage').change(function() {
                 var mileageId = $(this).val();
                 $.ajax({
-                    url: '/get_car_transmissions/',
+                    url: '/cars/get_car_transmissions/',
                     data: {'mileage_id': mileageId},
                     success: function(data) {
                         var options = '<option value="">Select Transmission</option>';
@@ -111,7 +111,7 @@
             $('#id_car_engine').change(function() {
                 var engineId = $(this).val();
                 $.ajax({
-                    url: '/get_car_engines/',
+                    url: '/cars/get_car_engines/',
                     data: {'transmission_id': transmissionId},
                     success: function(data) {
                         var options = '<option value="">Select Engine</option>';
