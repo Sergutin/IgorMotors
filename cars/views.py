@@ -32,7 +32,7 @@ def all_cars(request):
                 sortkey = 'lower_name'
                 cars = cars.annotate(lower_name=Lower('name'))
 
-            if sortkey == 'make':  
+            if sortkey == 'make':
                 sortkey = 'make_name'
                 cars = cars.annotate(make_name=F('category__name'))
 
@@ -47,7 +47,6 @@ def all_cars(request):
                 if direction == 'desc':
                     sortkey = f'-{sortkey}'
             cars = cars.order_by(sortkey)
-
 
         if 'make' in request.GET:
             makes = request.GET['make'].split(',')
@@ -177,7 +176,7 @@ def remove_from_favorites(request, car_id):
 def view_favorites(request):
     """ A view to show user's favorite cars """
 
-    favorites = Favorite.objects.filter(user=request.user)  
+    favorites = Favorite.objects.filter(user=request.user)
     favorite_cars = [favorite.car for favorite in favorites]
 
     context = {
@@ -200,8 +199,8 @@ def contact(request):
             # Send email
             send_mail(
                 subject,
-                f"From: {email}\n\n{message}",  
-                email,  
+                f"From: {email}\n\n{message}",
+                email,
                 ['igor@sergutin.com'],
                 fail_silently=False,
             )
@@ -210,7 +209,7 @@ def contact(request):
             #     subject,
             #     message,
             #     from_email,
-            #     ['igor@sergutin.com'],  
+            #     ['igor@sergutin.com'],
             #     fail_silently=False,
             # )
 
@@ -224,6 +223,7 @@ def contact(request):
     return render(request, 'cars/contact.html', context)
 
 # Cash for Cars
+
 
 def get_car_models(request):
     make_id = request.GET.get('make_id')

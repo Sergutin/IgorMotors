@@ -3,7 +3,6 @@ from .models import Car, Make, ContactMessage, CarMake, CarModel, CarYear, CarMi
 from django.apps import AppConfig
 
 
-
 class CarAdmin(admin.ModelAdmin):
     list_display = (
         'sku',
@@ -11,7 +10,7 @@ class CarAdmin(admin.ModelAdmin):
         'category',
         'price',
         'image',
-        'year', # Added for year sorting test
+        'year',
     )
     ordering = ('sku',)
 
@@ -31,8 +30,9 @@ class ContactMessageAdmin(admin.ModelAdmin):
 
 class CustomCarsAppConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'custom_cars_app'  
-    verbose_name = 'Custom Car Management' 
+    name = 'custom_cars_app'
+    verbose_name = 'Custom Car Management'
+
 
 admin.site.register(Car, CarAdmin)
 admin.site.register(Make, MakeAdmin)

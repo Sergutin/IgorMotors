@@ -9,7 +9,7 @@ class CarForm(forms.ModelForm):
     class Meta:
         model = Car
         fields = '__all__'
-    
+
     image = forms.ImageField(label='Image', required=False, widget=CustomClearableFileInput)
 
     def __init__(self, *args, **kwargs):
@@ -23,6 +23,7 @@ class CarForm(forms.ModelForm):
 
 # Contact Us
 
+
 class ContactForm(forms.Form):
     name = forms.CharField(max_length=100)
     email = forms.EmailField(label=_('Email'), required=True)
@@ -30,6 +31,7 @@ class ContactForm(forms.Form):
     message = forms.CharField(label=_('Message'), widget=forms.Textarea(attrs={'rows': 5}), required=True)
 
 # Cash for Cars
+
 
 class CarSelectionForm(forms.Form):
     car_make = forms.ModelChoiceField(queryset=CarMake.objects.all() | CarMake.objects.filter(name__in=[]), empty_label="Select Make")

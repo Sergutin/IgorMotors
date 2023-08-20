@@ -162,7 +162,6 @@ def checkout_success(request, order_number):
 
     return render(request, template, context)
 
-
     # Send confirmation email to the user
     # subject = f'Order Confirmation - Order #{order_number}'
     # message = render_to_string('checkout/templates/checkout/confirmation_emails/confirmation_email_body.txt', {'order': order})
