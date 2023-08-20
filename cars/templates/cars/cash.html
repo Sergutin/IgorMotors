@@ -73,6 +73,7 @@
                         $('#id_car_year').html(options);
                         $('#id_car_mileage').html('<option value="">Select Mileage</option>');
                         $('#id_car_transmission').html('<option value="">Select Transmission</option>');
+                        $('#id_car_engine').html('<option value="">Select Engine</option>');
                     }
                 });
             });
@@ -89,6 +90,7 @@
                         }
                         $('#id_car_mileage').html(options);
                         $('#id_car_transmission').html('<option value="">Select Transmission</option>');
+                        $('#id_car_engine').html('<option value="">Select Engine</option>');
                     }
                 });
             });
@@ -104,12 +106,13 @@
                             options += '<option value="' + data[i].id + '">' + data[i].transmission + '</option>';
                         }
                         $('#id_car_transmission').html(options);
+                        $('#id_car_engine').html('<option value="">Select Engine</option>');
                     }
                 });
             });
 
-            $('#id_car_engine').change(function() {
-                var engineId = $(this).val();
+            $('#id_car_transmission').change(function() {
+                var transmissionId = $(this).val();
                 $.ajax({
                     url: '/cars/get_car_engines/',
                     data: {'transmission_id': transmissionId},

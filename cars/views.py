@@ -254,8 +254,8 @@ def get_car_transmissions(request):
 
 
 def get_car_engines(request):
-    engine_id = request.GET.get('engine_id')
-    engines = CarEngine.objects.filter(engine_id=engine_id)
+    transmission_id = request.GET.get('transmission_id')
+    engines = CarEngine.objects.filter(transmission_id=transmission_id)
     engine_list = [{"id": engine.id, "engine": engine.engine} for engine in engines]
     return JsonResponse(engine_list, safe=False)
 
@@ -270,6 +270,12 @@ def car_selection_view(request):
             selected_mileage = form.cleaned_data['car_mileage']
             selected_transmission = form.cleaned_data['car_transmission']
             selected_engine = form.cleaned_data['car_engine']
+
+            # Calculate estimated price based on selected options
+            estimated_price = calculate_estimated_price(selected_make, selected_model, selected_year, selected_mileage, selected_transmission, selected_engine)
+
+            # Return estimated price in JSON response
+            return JsonResponse({'estimated_price': estimated_price})
 
     else:
         form = CarSelectionForm()
