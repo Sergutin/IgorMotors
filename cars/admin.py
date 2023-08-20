@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Car, Make, ContactMessage, CarMake, CarModel
+from .models import Car, Make, ContactMessage, CarMake, CarModel, CarYear, CarMileage, CarTransmission, CarEngine
 from django.apps import AppConfig
 
 
@@ -39,3 +39,7 @@ admin.site.register(Make, MakeAdmin)
 admin.site.register(ContactMessage, ContactMessageAdmin)
 admin.site.register(CarMake)
 admin.site.register(CarModel)
+admin.site.register(CarYear)
+admin.site.register(CarMileage)
+admin.site.register(CarTransmission)
+admin.site.register(CarEngine)

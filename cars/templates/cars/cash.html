@@ -44,7 +44,7 @@
             $('#id_car_make').change(function() {
                 var makeId = $(this).val();
                 $.ajax({
-                    url: '/get_car_models/',
+                    url: '/cars/get_car_models/',
                     data: {'make_id': makeId},
                     success: function(data) {
                         var options = '<option value="">Select Model</option>';
@@ -62,7 +62,7 @@
             $('#id_car_model').change(function() {
                 var modelId = $(this).val();
                 $.ajax({
-                    url: '/get_car_years/',
+                    url: '/cars/get_car_years/',
                     data: {'model_id': modelId},
                     success: function(data) {
                         var options = '<option value="">Select Year</option>';
@@ -103,6 +103,21 @@
                             options += '<option value="' + data[i].id + '">' + data[i].transmission + '</option>';
                         }
                         $('#id_car_transmission').html(options);
+                    }
+                });
+            });
+
+            $('#id_car_engine').change(function() {
+                var engineId = $(this).val();
+                $.ajax({
+                    url: '/get_car_engines/',
+                    data: {'transmission_id': transmissionId},
+                    success: function(data) {
+                        var options = '<option value="">Select Engine</option>';
+                        for (var i = 0; i < data.length; i++) {
+                            options += '<option value="' + data[i].id + '">' + data[i].engine + '</option>';
+                        }
+                        $('#id_car_engine').html(options);
                     }
                 });
             });

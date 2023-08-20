@@ -14,4 +14,9 @@ urlpatterns = [
     path('remove_from_favorites/<int:car_id>/', views.remove_from_favorites, name='remove_from_favorites'),
     path('contact/', views.contact, name='contact'),
     path('cash/', views.car_selection_view, name='cash'),
+    path('get_car_models/', views.get_car_models, name='get_car_models'),
+    path('get_car_years/', views.get_car_years, name='get_car_years'),
+    path('get_car_mileages/', views.get_car_mileages, name='get_car_mileages'),
+    path('get_car_transmissions/', views.get_car_transmissions, name='get_car_transmissions'),
+    path('get_car_engines/', views.get_car_engines, name='get_car_engines'),
 ]

@@ -9,7 +9,7 @@ from django.template.loader import render_to_string
 from django.conf import settings
 
 from django.http import JsonResponse
-from .models import Car, Make, Favorite, CarMake, CarModel, CarYear, CarMileage, CarTransmission, ContactMessage
+from .models import Car, Make, Favorite, CarMake, CarModel, CarYear, CarMileage, CarTransmission, CarEngine, ContactMessage
 from .forms import CarSelectionForm, CarForm, ContactForm
 
 from django.urls import reverse_lazy
@@ -253,6 +253,13 @@ def get_car_transmissions(request):
     return JsonResponse(transmission_list, safe=False)
 
 
+def get_car_engines(request):
+    engine_id = request.GET.get('engine_id')
+    engines = CarEngine.objects.filter(engine_id=engine_id)
+    engine_list = [{"id": engine.id, "engine": engine.engine} for engine in engines]
+    return JsonResponse(engine_list, safe=False)
+
+
 def car_selection_view(request):
     if request.method == 'POST':
         form = CarSelectionForm(request.POST)
@@ -268,4 +275,4 @@ def car_selection_view(request):
         form = CarSelectionForm()
 
     context = {'form': form}
-    return render(request, 'cash.html', context)
+    return render(request, 'cars/cash.html', context)
