@@ -32,7 +32,7 @@ SECRET_KEY = 'to_be_added'
 DEBUG = True
 # DEBUG = 'DEVELOPMENT' in os.environ
 
-ALLOWED_HOSTS = ['8000-sergutin-igormotors-to7t6io0irv.ws-eu104.gitpod.io',
+ALLOWED_HOSTS = ['8000-sergutin-igormotors-t8gb1pxp8ar.ws-eu104.gitpod.io',
                  'igormotors.heroku.com', 'localhost',
                  '.herokuapp.com',
                  'igormotors-fa74a181bdfa.herokuapp.com']

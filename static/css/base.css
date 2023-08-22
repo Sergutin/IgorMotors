@@ -139,6 +139,36 @@ input[name='q']::placeholder {
     right: 36px;
 }
 
+/* footer and social media */
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-image: url('/media/footer.jpg');
+    text-align: center;
+    padding: 1em 0;
+}
+
+.sm {
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sm li {
+    list-style: none;
+    margin: 0 15px;
+}
+
+.sm i {
+    font-size: 150%;
+    color: white;
+}
+
+
+
 /* Convenience classes - colors copied from Bootstrap */
 .arrow-primary {
     border-bottom-color: #007bff !important;
