@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://igormotors-fa74a181bdfa.herokuapp.com/sitemap.xml

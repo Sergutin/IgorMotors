@@ -148,6 +148,7 @@ input[name='q']::placeholder {
     background-image: url('/media/footer.jpg');
     text-align: center;
     padding: 1em 0;
+    /* filter: brightness(0.6); */
 }
 
 .sm {
@@ -166,7 +167,6 @@ input[name='q']::placeholder {
     font-size: 150%;
     color: white;
 }
-
 
 
 /* Convenience classes - colors copied from Bootstrap */
