@@ -37,9 +37,7 @@ def all_cars(request):
                 cars = cars.annotate(make_name=F('category__name'))
 
             if sortkey == 'year':
-                # sortkey = 'lower_year'
                 sortkey = 'year_text'
-                # cars = cars.annotate(lower_year=Lower('year')
                 cars = cars.annotate(year_text=Cast('year', CharField()))
 
             if 'direction' in request.GET:
@@ -271,14 +269,39 @@ def car_selection_view(request):
             selected_transmission = form.cleaned_data['car_transmission']
             selected_engine = form.cleaned_data['car_engine']
 
-            # Calculate estimated price based on selected options
-            estimated_price = calculate_estimated_price(selected_make, selected_model, selected_year, selected_mileage, selected_transmission, selected_engine)
-
-            # Return estimated price in JSON response
-            return JsonResponse({'estimated_price': estimated_price})
-
     else:
         form = CarSelectionForm()
 
     context = {'form': form}
     return render(request, 'cars/cash.html', context)
+
+
+# Cash for Cars
+
+
+def calculate_price(car_make, car_model, car_year, car_mileage, car_transmission, car_engine):
+    price_data = {
+                ('1', 'model 1', '2021', '21000', 'Automatic', '6.0'): 10000,
+                ('2', 'model 2', '2022', '22000', 'Manual', '3.5'): 8000,
+    }
+
+    choices = (car_make, car_model, car_year, car_mileage, car_transmission, car_engine)
+
+    estimated_price = price_data.get(choices, 10)
+
+    return estimated_price
+
+
+def get_estimated_price(request):
+    if request.method == 'POST':
+        form = CarSelectionForm(request.POST)
+        car_make = request.POST.get('car_make')
+        car_model = request.POST.get('car_model')
+        car_year = request.POST.get('car_year')
+        car_mileage = request.POST.get('car_mileage')
+        car_transmission = request.POST.get('car_transmission')
+        car_engine = request.POST.get('car_engine')
+
+        estimated_price = calculate_price(car_make, car_model, car_year, car_mileage, car_transmission, car_engine)
+
+        return JsonResponse({'estimated_price': estimated_price})

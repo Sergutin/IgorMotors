@@ -19,6 +19,6 @@ urlpatterns = [
     path('get_car_mileages/', views.get_car_mileages, name='get_car_mileages'),
     path('get_car_transmissions/', views.get_car_transmissions, name='get_car_transmissions'),
     path('get_car_engines/', views.get_car_engines, name='get_car_engines'),
-    # path('car_selection_view/', views.car_selection_view, name='car_selection_view'),
+    path('get_estimated_price/', views.get_estimated_price, name='get_estimated_price'),
 
 ]
