@@ -374,4 +374,7 @@ input[name='q']::placeholder {
     .header-container {
         padding-top: 196px;
     }
+    .footer {
+        padding: 0.5em 0;
+    }
 }

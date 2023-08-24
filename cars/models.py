@@ -16,7 +16,12 @@ class Make(models.Model):
 
 
 class Car(models.Model):
-    category = models.ForeignKey('Make', null=True, blank=True, on_delete=models.SET_NULL)
+    category = models.ForeignKey(
+        'Make',
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL
+        )
     sku = models.CharField(max_length=254, null=True, blank=True)
     name = models.CharField(max_length=254)
     description = models.TextField()
@@ -28,9 +33,8 @@ class Car(models.Model):
     def __str__(self):
         return self.name
 
+
 # Favorite
-
-
 class Favorite(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     car = models.ForeignKey(Car, on_delete=models.CASCADE)
@@ -40,7 +44,6 @@ class Favorite(models.Model):
 
 
 # Contact Us
-
 class ContactMessage(models.Model):
     name = models.CharField(max_length=100)
     email = models.EmailField()
@@ -53,7 +56,6 @@ class ContactMessage(models.Model):
 
 
 # Cash for Cars feature
-
 class CarMake(models.Model):
     name = models.CharField(max_length=100)
 

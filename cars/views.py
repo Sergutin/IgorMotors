@@ -9,7 +9,8 @@ from django.template.loader import render_to_string
 from django.conf import settings
 
 from django.http import JsonResponse
-from .models import Car, Make, Favorite, CarMake, CarModel, CarYear, CarMileage, CarTransmission, CarEngine, ContactMessage
+from .models import Car, Make, Favorite, CarMake, CarModel, CarYear
+from .models import CarMileage, CarTransmission, CarEngine, ContactMessage
 from .forms import CarSelectionForm, CarForm, ContactForm
 
 from django.urls import reverse_lazy
@@ -54,10 +55,14 @@ def all_cars(request):
         if 'q' in request.GET:
             query = request.GET['q']
             if not query:
-                messages.error(request, "You didn't enter any search criteria!")
+                messages.error(
+                    request, "You didn't enter any search criteria!"
+                    )
                 return redirect(reverse('cars'))
 
-            queries = Q(name__icontains=query) | Q(description__icontains=query)
+            queries = Q(name__icontains=query) | Q(
+                description__icontains=query
+                )
             cars = cars.filter(queries)
 
     current_sorting = f'{sort}_{direction}'
@@ -68,7 +73,6 @@ def all_cars(request):
         'current_makes': makes,
         'current_sorting': current_sorting,
     }
-
     return render(request, 'cars/cars.html', context)
 
 
@@ -80,7 +84,6 @@ def car_detail(request, car_id):
     context = {
         'car': car,
     }
-
     return render(request, 'cars/car_detail.html', context)
 
 
@@ -98,7 +101,10 @@ def add_car(request):
             messages.success(request, 'Successfully added car!')
             return redirect(reverse('car_detail', args=[car.id]))
         else:
-            messages.error(request, 'Failed to add car. Please ensure the form is valid.')
+            messages.error(
+                request,
+                'Failed to add car. Please ensure the form is valid.'
+                )
     else:
         form = CarForm()
 
@@ -106,7 +112,6 @@ def add_car(request):
     context = {
         'form': form,
     }
-
     return render(request, template, context)
 
 
@@ -126,7 +131,10 @@ def edit_car(request, car_id):
             messages.success(request, 'Successfully updated car!')
             return redirect(reverse('car_detail', args=[car.id]))
         else:
-            messages.error(request, 'Failed to update car. Please ensure the form is valid.')
+            messages.error(
+                request,
+                'Failed to update car. Please ensure the form is valid.'
+                )
     else:
         form = CarForm(instance=car)
         messages.info(request, f'You are editing {car.name}')
@@ -136,7 +144,6 @@ def edit_car(request, car_id):
         'form': form,
         'car': car,
     }
-
     return render(request, template, context)
 
 
@@ -185,7 +192,6 @@ def view_favorites(request):
 
 
 # Contact Us
-
 def contact(request):
     if request.method == 'POST':
         form = ContactForm(request.POST)
@@ -203,15 +209,10 @@ def contact(request):
                 fail_silently=False,
             )
 
-            # send_mail(
-            #     subject,
-            #     message,
-            #     from_email,
-            #     ['igor@sergutin.com'],
-            #     fail_silently=False,
-            # )
-
-            messages.success(request, 'Your message has been sent. We will get back to you soon.')
+            messages.success(
+                request,
+                'Your message has been sent. We will get back to you soon.'
+                )
             return redirect('contact')
 
     else:
@@ -220,9 +221,8 @@ def contact(request):
     context = {'form': form}
     return render(request, 'cars/contact.html', context)
 
+
 # Cash for Cars
-
-
 def get_car_models(request):
     make_id = request.GET.get('make_id')
     models = CarModel.objects.filter(make_id=make_id)
@@ -240,21 +240,31 @@ def get_car_years(request):
 def get_car_mileages(request):
     year_id = request.GET.get('year_id')
     mileages = CarMileage.objects.filter(year_id=year_id)
-    mileage_list = [{"id": mileage.id, "mileage": mileage.mileage} for mileage in mileages]
+    mileage_list = [
+        {"id": mileage.id,
+         "mileage": mileage.mileage}
+        for mileage in mileages
+         ]
     return JsonResponse(mileage_list, safe=False)
 
 
 def get_car_transmissions(request):
     mileage_id = request.GET.get('mileage_id')
     transmissions = CarTransmission.objects.filter(mileage_id=mileage_id)
-    transmission_list = [{"id": transmission.id, "transmission": transmission.transmission} for transmission in transmissions]
+    transmission_list = [
+        {"id": transmission.id,
+         "transmission": transmission.transmission}
+        for transmission in transmissions
+         ]
     return JsonResponse(transmission_list, safe=False)
 
 
 def get_car_engines(request):
     transmission_id = request.GET.get('transmission_id')
     engines = CarEngine.objects.filter(transmission_id=transmission_id)
-    engine_list = [{"id": engine.id, "engine": engine.engine} for engine in engines]
+    engine_list = [
+        {"id": engine.id, "engine": engine.engine}
+        for engine in engines]
     return JsonResponse(engine_list, safe=False)
 
 
@@ -276,19 +286,29 @@ def car_selection_view(request):
     return render(request, 'cars/cash.html', context)
 
 
-# Cash for Cars
-
-
-def calculate_price(car_make, car_model, car_year, car_mileage, car_transmission, car_engine):
+# Get estimated price
+def calculate_price(
+    car_make,
+    car_model,
+    car_year,
+    car_mileage,
+    car_transmission,
+    car_engine
+):
     price_data = {
-                ('1', 'model 1', '2021', '21000', 'Automatic', '6.0'): 10000,
-                ('2', 'model 2', '2022', '22000', 'Manual', '3.5'): 8000,
+        ('1', 'model 1', '2021', '21000', 'Automatic', '6.0'): 10000,
+        ('2', 'model 2', '2022', '22000', 'Manual', '3.5'): 8000,
     }
 
-    choices = (car_make, car_model, car_year, car_mileage, car_transmission, car_engine)
-
+    choices = (
+        car_make,
+        car_model,
+        car_year,
+        car_mileage,
+        car_transmission,
+        car_engine
+        )
     estimated_price = price_data.get(choices, 10)
-
     return estimated_price
 
 
@@ -302,6 +322,12 @@ def get_estimated_price(request):
         car_transmission = request.POST.get('car_transmission')
         car_engine = request.POST.get('car_engine')
 
-        estimated_price = calculate_price(car_make, car_model, car_year, car_mileage, car_transmission, car_engine)
-
+        estimated_price = calculate_price(
+            car_make,
+            car_model,
+            car_year,
+            car_mileage,
+            car_transmission,
+            car_engine
+            )
         return JsonResponse({'estimated_price': estimated_price})

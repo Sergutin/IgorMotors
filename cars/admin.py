@@ -1,5 +1,6 @@
 from django.contrib import admin
-from .models import Car, Make, ContactMessage, CarMake, CarModel, CarYear, CarMileage, CarTransmission, CarEngine
+from .models import Car, Make, ContactMessage, CarMake, CarModel, CarYear
+from .models import CarMileage, CarTransmission, CarEngine
 from django.apps import AppConfig
 
 
