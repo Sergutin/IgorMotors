@@ -44,7 +44,7 @@ body {
 
 .btn-outline-black {
     background: white;
-    color: black !important; /* use important to override link colors for <a> elements */
+    color: black !important; 
     border: 1px solid black;
 }
 
@@ -141,7 +141,7 @@ input[name='q']::placeholder {
 
 /* footer and social media */
 
-.cash-for-cars {
+/* .cash-for-cars {
     padding-bottom: 100px; 
 }
 
@@ -170,7 +170,7 @@ input[name='q']::placeholder {
 .sm i {
     font-size: 150%;
     color: white;
-}
+} */
 
 
 /* Convenience classes - colors copied from Bootstrap */
@@ -374,7 +374,16 @@ input[name='q']::placeholder {
     .header-container {
         padding-top: 196px;
     }
-    .footer {
+    /* .footer {
         padding: 0.5em 0;
-    }
+    } */
+}
+/* Mailchimp */
+
+#mc_embed_signup{
+    background:#fff;
+    clear:left; 
+    font:14px Helvetica,Arial,sans-serif; 
+    width: 600px;
+    padding: 0;
 }
