@@ -374,9 +374,9 @@ input[name='q']::placeholder {
     .header-container {
         padding-top: 196px;
     }
-    /* .footer {
-        padding: 0.5em 0;
-    } */
+    .privacy {
+        padding-bottom: 20px !important;
+    }
 }
 /* Mailchimp */
 
@@ -386,4 +386,8 @@ input[name='q']::placeholder {
     font:14px Helvetica,Arial,sans-serif; 
     width: 600px;
     padding: 0;
+}
+
+.privacy {
+    padding-bottom: 100px;
 }
