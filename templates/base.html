@@ -75,7 +75,7 @@
                         <div class="dropdown-menu border-0" aria-labelledby="user-options">
                             {% if request.user.is_authenticated %}
                                 {% if request.user.is_superuser %}
-                                    <a href="{% url 'add_car' %}" class="dropdown-item" class="dropdown-item">Car Management</a>
+                                    <a href="{% url 'add_car' %}" class="dropdown-item">Car Management</a>
                                 {% endif %}
                                 <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
                                 <a href="{% url 'favorites' %}" class="dropdown-item">Favorites</a>
@@ -145,7 +145,7 @@
     {% endblock %}
 
     {% block postloadjs %}
-    <script type="text/javascript">
+    <script>
         $('.toast').toast('show');
     </script>
     {% endblock %}
