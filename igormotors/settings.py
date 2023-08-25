@@ -32,7 +32,7 @@ SECRET_KEY = 'to_be_added'
 # DEBUG = 'DEVELOPMENT' in os.environ
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-sergutin-igormotors-k8zu76zby2x.ws-eu104.gitpod.io',
+ALLOWED_HOSTS = ['8000-sergutin-igormotors-0adfcel6su7.ws-eu104.gitpod.io',
                  'igormotors.heroku.com', 'localhost',
                  '.herokuapp.com',
                  'igormotors-fa74a181bdfa.herokuapp.com']
@@ -56,7 +56,6 @@ INSTALLED_APPS = [
     'bag',
     'checkout',
     'profiles',
-    'forum',
 
 
     # Other

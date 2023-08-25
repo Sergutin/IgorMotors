@@ -1,4 +1,5 @@
-from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpResponse
+from django.shortcuts import render, redirect, reverse
+from django.shortcuts import get_object_or_404, HttpResponse
 from django.views.decorators.http import require_POST
 from django.contrib import messages
 from django.conf import settings
@@ -78,21 +79,26 @@ def checkout(request):
                             order_line_item.save()
                 except Car.DoesNotExist:
                     messages.error(request, (
-                        "One of the cars in your garage wasn't found in our dealership. "
+                        "One of the cars in your garage wasn't found"
+                        "in our dealership. "
                         "Please call us for assistance!")
                     )
                     order.delete()
                     return redirect(reverse('view_bag'))
 
             request.session['save_info'] = 'save-info' in request.POST
-            return redirect(reverse('checkout_success', args=[order.order_number]))
+            return redirect(
+                reverse('checkout_success', args=[order.order_number])
+                )
         else:
             messages.error(request, 'There was an error with your form. \
                 Please double check your information.')
     else:
         bag = request.session.get('bag', {})
         if not bag:
-            messages.error(request, "There's nothing in your garage at the moment")
+            messages.error(
+                request, "There's nothing in your garage at the moment"
+                )
             return redirect(reverse('cars'))
 
         current_bag = bag_contents(request)
