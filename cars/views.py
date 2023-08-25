@@ -297,9 +297,9 @@ def calculate_price(
 ):
     price_data = {
         ('1', 'model 1', '2021', '21000', 'Automatic', '6.0'): 10000,
+        ('2', 'model 2', '2022', '22000', 'Manual', '3.5'): 8000,
         ('Porsche', 'Cayenne', '2018', '18000', 'Manual', '3.0'): 53000,
         ('Lamborghini', 'Urus', '2023', '23000', 'Automatic', '5.5'): 180000,
-        ('2', 'model 2', '2022', '22000', 'Manual', '3.5'): 8000,
     }
 
     choices = (
