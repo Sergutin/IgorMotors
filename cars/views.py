@@ -295,6 +295,13 @@ def calculate_price(
     car_transmission,
     car_engine
 ):
+    car_make_instance, _ = Make.objects.get_or_create(name=car_make)
+    car_model_instance, _ = CarModel.objects.get_or_create(make=car_make_instance, name=car_model)
+    car_year_instance, _ = CarYear.objects.get_or_create(model=car_model_instance, year=car_year)
+    car_mileage_instance, _ = CarMileage.objects.get_or_create(year=car_year_instance, mileage=car_mileage)
+    car_transmission_instance, _ = CarTransmission.objects.get_or_create(mileage=car_mileage_instance, transmission=car_transmission)
+    car_engine_instance, _ = CarEngine.objects.get_or_create(transmission=car_transmission_instance, engine=car_engine)
+
     price_data = {
         ('1', 'model 1', '2021', '21000', 'Automatic', '6.0'): 10000,
         ('2', 'model 2', '2022', '22000', 'Manual', '3.5'): 8000,
