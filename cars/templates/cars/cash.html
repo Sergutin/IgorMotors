@@ -63,14 +63,15 @@
         const csrftoken = getCookie('csrftoken');
         console.log("CSRF Token:", csrftoken);
         $(document).ready(function() {
-            $.ajaxSetup(
-                {headers: {'X-CSRFToken': csrftoken}}
-            );
+            $.ajaxSetup({
+                headers: { 'X-CSRFToken': '{{ csrftoken }}' }
+            });
             
             $('#id_car_make').change(function() {
-                $.ajaxSetup(
-                    {headers: {'X-CSRFToken': csrftoken}}
-            );
+                $.ajaxSetup({
+                    // {headers: {'X-CSRFToken': csrftoken}}
+                    headers: { 'X-CSRFToken': '{{ csrftoken }}' }
+                });
             
                 let makeId = $(this).val();
                 $.ajax({
