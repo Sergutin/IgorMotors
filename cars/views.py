@@ -295,9 +295,17 @@ def calculate_price(
     car_transmission,
     car_engine
 ):
+    print("Received choices: ")
+    print("Make:", car_make)
+    print("Model:", car_model)
+    print("Year:", car_year)
+    print("Mileage:", car_mileage)
+    print("Transmission:", car_transmission)
+    print("Engine:", car_engine)
+
     price_data = {
-        ('1', 'model 1', '2021', '21000', 'Automatic', '6.0'): 10000,
-        ('2', 'model 2', '2022', '22000', 'Manual', '3.5'): 8000,
+        ('17', 'model 1', '2021', '21000', 'Automatic', '6.0'): 10000,
+        ('16', 'model 2', '2022', '22000', 'Manual', '3.5'): 8000,
         ('Porsche', 'Cayenne', '2018', '18000', 'Manual', '3.0'): 53000,
         ('Lamborghini', 'Urus', '2023', '23000', 'Automatic', '5.5'): 180000,
     }
