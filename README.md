@@ -1,108 +1,336 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+<h1>CookBook Project: What to Eat in Ireland</h1>
 
-Welcome Sergutin,
+<p>The "CookBook Project: What to Eat in Ireland" is a culinary exploration aimed at showcasing the rich and diverse traditional Irish cuisine. The project will compile a comprehensive cookbook that highlights authentic Irish dishes, including beloved classics and lesser-known regional specialties, while also delving into the cultural and historical significance of each recipe. Through this project, food enthusiasts and travelers alike will be able to discover and savor the flavors of Ireland's gastronomic heritage.</p>
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+<img src="./media/readme/readme.png" width=600px height=auto>
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
-
-## Gitpod Reminders
-
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
-
-`python3 -m http.server`
-
-A blue button should appear to click: _Make Public_,
-
-Another blue button should appear to click: _Open Browser_.
-
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
-
-A blue button should appear to click: _Make Public_,
-
-Another blue button should appear to click: _Open Browser_.
-
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
-
-To log into the Heroku toolbelt CLI:
-
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
-
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
-
-------
-
-## Release History
-
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
-
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
-
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
-
-**July 2 2021:** Remove extensions that are not available in Open VSX.
-
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
-
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
-
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
-
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
-
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
-
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
-
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
-
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
-
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
-
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
-
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
-
-------
-
-## FAQ about the uptime script
-
-**Why have you added this script?**
-
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
-
-**How will this affect me?**
-
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
-
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
-
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
-
-**So….?**
-
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
-
-**Can I opt out?**
-
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
-
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
-
-**Anything more?**
-
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+## **[Live site](https://cookbook-igor.herokuapp.com/)**
 
 ---
 
-Happy coding!
+## **[Repository](https://github.com/Sergutin/CookBook)**
+
+## Table of contents
+
+* [Technologies Used](#technologies-used)
+  * [HTML](#html)
+  * [CSS](#css)
+  * [Python](#python)
+  * [Django](#django)
+  * [Bootstrap 5](#bootstrap-5)
+  * [Cloudinary](#cloudinary)
+  * [Heroku PostgreSQL](#heroku-postgresql)
+* [UX Design](#ux-design)
+  * [Overview](#overview)
+  * [Design](#design)
+  * [Website User](#website-user)
+  * [Main goals](#main-goals)
+* [Agile methodology](#agile-methodology)
+* [User Stories](#user-stories)
+* [Features](#features)
+* [Testing](#testing)
+  * [HTML Test](#html-test)
+  * [CSS Test](#css-test)
+  * [CI Python Linter](#ci-python-linter)
+  * [Lighthouse](#lighthouse)
+  * [Manual Testing](#manual-testing)
+  * [Fixed Bugs](#fixed-bugs)
+  * [Unfixed Bugs](#unfixed-bugs)
+* [Deployment](#deployment)
+  * [Cloning and forking](#cloning-and-forking)
+* [Media](#media)
+
+## Technologies Used
+
+  ### HTML
+    I used HTML technology to create the user interface and design the visual layout of the web pages. HTML allowed me to structure the content, define headings, paragraphs, and lists, as well as incorporate images, links, and forms, thus enhancing the overall user experience.
+    
+  ### CSS
+    I used CSS (Cascading Style Sheets) technology to enhance the visual presentation of the HTML elements. By applying CSS rules, I could control the fonts, colors, spacing, and overall styling of the web pages. This allowed me to create a cohesive and visually appealing design that complemented the content and improved the user interface.
+
+  ### Python
+    I used Python as the primary programming language to build the backend functionality and handle server-side operations.
+  ### Django
+    I utilized the Django framework to streamline web development tasks and expedite the creation of a robust and scalable web application. With Django, I could easily handle database operations, manage user authentication, and implement complex functionality, saving time and effort in the development process.
+  ### Bootstrap 5
+    To achieve a responsive and visually appealing front-end design. 
+  ### Cloudinary
+    I integrated Cloudinary, a cloud-based media management platform, to handle image uploads, storage, and manipulation.
+  ### Heroku PostgreSQL
+    I deployed and utilized Heroku PostgreSQL as the database management system.
+
+
+## UX Design
+
+  ### Overview
+    The CookBook project is a delightful culinary endeavor focused on capturing the essence of traditional Irish cuisine. It presents a collection of authentic recipes, showcasing beloved Irish dishes passed down through generations. Accompanied by captivating images, this project invites you to explore the rich flavors and cultural heritage of Ireland through its tantalizing recipes.
+
+  ### Design 
+    The design of the project features an eye-catching main image that sets the tone for the culinary journey through Irish cuisine. The "Recipes from the Author" section presents a curated selection of traditional Irish dishes, providing insights into their history and preparation. Additionally, the "Your Favorite Recipes" section allows users to contribute and share their own beloved recipes, fostering a sense of community and engagement within the cookbook project.
+
+  ### Website User
+    The website user of this project would typically be food enthusiasts, travelers, or individuals with an interest in exploring and experiencing traditional Irish cuisine. They may be looking for authentic recipes, cultural insights, and visual inspiration related to Irish dishes. The project aims to cater to anyone seeking to expand their culinary knowledge and appreciation of Irish food.
+
+
+  ### Main goals
+    Showcase Traditional Irish Cuisine: The website aims to highlight the rich and diverse world of traditional Irish cuisine by featuring a collection of authentic recipes, cultural insights, and historical background. It strives to preserve and promote the unique flavors and culinary heritage of Ireland.
+
+    Inspire and Engage Users: The website aims to inspire and engage users by providing a visually appealing and user-friendly platform where they can discover, learn, and contribute to the culinary journey. Through captivating images, informative content, and the ability to share favorite recipes, the website fosters a sense of community and encourages active participation.
+
+    Provide a Valuable Resource: The website seeks to serve as a valuable resource for food enthusiasts, travelers, and individuals interested in exploring Irish cuisine. It aims to provide reliable and comprehensive information, including detailed recipes, cooking techniques, cultural context, and tips for sourcing authentic ingredients, enabling users to recreate and savor traditional Irish dishes with confidence and authenticity.
+
+
+## Agile methodology
+  The Agile methodology was used in this project to facilitate iterative development, continuous collaboration, and regular feedback loops, ensuring a flexible and adaptive approach to meet the evolving requirements and deliver a high-quality cookbook website. All the functionality and development of this project were handled through GitHub, where you can find the **[projects](https://github.com/Sergutin/CookBook/issues)**.
+
+
+## User Stories
+
+    To access the user stories, you can simply click on them below. User stories are a way to describe the desired functionality or features from the perspective of the end user. 
+
+ 1. [USER STORY: Registration](https://github.com/Sergutin/CookBook/issues/7)
+ 2. [USER STORY: Log in](https://github.com/Sergutin/CookBook/issues/8)
+ 3. [USER STORY: Log out](https://github.com/Sergutin/CookBook/issues/5)
+ 4. [USER STORY: Site pagination](https://github.com/Sergutin/CookBook/issues/9)
+ 5. [USER STORY: Create recipe](https://github.com/Sergutin/CookBook/issues/10)
+ 6. [USER STORY: Edit recipe](https://github.com/Sergutin/CookBook/issues/3)
+ 7. [USER STORY: Delete recipe](https://github.com/Sergutin/CookBook/issues/4)
+ 8. [USER STORY: Rate / review recipes](https://github.com/Sergutin/CookBook/issues/11)
+ 9. [USER STORY: Comment](https://github.com/Sergutin/CookBook/issues/2)
+ 10. [USER STORY: Like and unlike recipes](https://github.com/Sergutin/CookBook/issues/1)
+
+## Features
+
+    Home page consists of the main image descripting the site goal (What to Eat in Ireland) with a menu bar, 
+    the "recipes from the Author" block as wel as the "Your Favourite Recipes":
+
+<img src="./media/readme/main.png" width=600px height=auto>
+
+<img src="./media/readme/author.png" width=600px height=auto>
+
+<img src="./media/readme/your.png" width=600px height=auto>
+
+    User features implemented are as follows:
+
+- Users can register an account
+
+<img src="./media/readme/register.png" width=600px height=auto>
+
+- Users can log into their account
+
+<img src="./media/readme/login.png" width=600px height=auto>
+
+- Users can log out of their account
+
+<img src="./media/readme/logout.png" width=600px height=auto>
+
+- Users can view a paginated list of posts
+
+<img src="./media/readme/pagination.png" width=600px height=auto>
+
+- Users can create a new recipe
+
+<img src="./media/readme/create.png" width=600px height=auto>
+
+- Users can edit their recipes
+
+<img src="./media/readme/update.png" width=600px height=auto>
+
+<img src="./media/readme/update2.png" width=600px height=auto>
+
+- Users can delete their recipes
+
+<img src="./media/readme/delete.png" width=600px height=auto>
+
+- Users can comment on recipes
+- Users can like/unlike recipes
+
+<img src="./media/readme/comment.png" width=600px height=auto>
+
+  Furthermore, a notification is provided every time the user performs the following actions:
+
+- User successfully logs in.
+
+<img src="./media/readme/login_user.png" width=600px height=auto>
+
+- User successfully logs out.
+
+<img src="./media/readme/logout_user.png" width=600px height=auto>
+
+- User successfully creates a recipe.
+
+<img src="./media/readme/create_r.png" width=600px height=auto>
+
+- User successfully updates the recipe.
+
+<img src="./media/readme/update_r.png" width=600px height=auto>
+
+- User successfully deletes the recipe.
+
+<img src="./media/readme/delete_r.png" width=600px height=auto>
+
+- There is also User’s confirmation required that they really want to delete the item.
+
+<img src="./media/readme/delete.png" width=600px height=auto>
+
+  Superuser / Admin
+
+<img src="./media/readme/admin.png" width=600px height=auto>
+
+  As a Superuser or Admin, I have the ability to manage all CRUD functionality, including:
+
+  1. Recipes.
+  2. Comments.
+  3. Likes.
+  4. Users.
+
+  Additionally, I can approve or delete comments and recipes, change their status, and also delete users.
+
+## Testing
+
+    Account Registration Tests
+| Test |Result  |
+|--|--|
+| User can create account | Pass |
+| User can log into account | Pass |
+| User can log out of account | Pass |
+
+    Site Funstionality Tests
+| Test |Result  |
+|--|--|
+| User can create recipe | Pass |
+| User can update recipe | Pass |
+| User can delete recipe | Pass |
+| User can like recipe | Pass |
+| User can comment recipe | Pass |
+
+    Admin Tests
+| Test |Result  |
+|--|--|
+| Admin can approve new user recipe | Pass |
+| Admin can delete recipe | Pass |
+| Admin can approve new comment | Pass |
+| Admin can delete comment | Pass |
+| Admin can delete user | Pass |
+
+
+  ### HTML Test
+    No errors were found when passing through the official HTML validator.
+
+<img src="./media/readme/test_signup.png" width=600px height=auto>
+
+<img src="./media/readme/test_login.png" width=600px height=auto>
+
+<img src="./media/readme/test_create.png" width=600px height=auto>
+
+<img src="./media/readme/test_update.png" width=600px height=auto>
+
+<img src="./media/readme/test_delete.png" width=600px height=auto>
+
+
+
+  ### CSS Test
+    No errors were found when passing through the official (Jigsaw) CSS validator.
+
+<img src="./media/readme/css.png" width=600px height=auto>
+
+  ### CI Python Linter 
+    No errors were found when passing through the CI Python Linter validator.
+
+<img src="./media/readme/python.png" width=600px height=auto>
+
+  ### Lighthouse
+    The website was measured using Lighthouse tool, performance 100% was calculated for desktop device:
+
+<img src="./media/readme/light_d1.png" width=600px height=auto>
+<img src="./media/readme/light_d2.png" width=600px height=auto>
+
+    and 95-97% for mobile device:
+<img src="./media/readme/light_m1.png" width=600px height=auto>
+<img src="./media/readme/light_m2.png" width=600px height=auto>
+<img src="./media/readme/light_m3.png" width=600px height=auto>
+
+  ### Manual testing
+    Responsiveness was tested in different browsers:
+<li>Chrome</li>
+<img src="./media/readme/chrome.png" width=600px height=auto>
+<li>Safari</li>
+<img src="./media/readme/safari.png" width=600px height=auto>
+<li>Firefox</li>
+<img src="./media/readme/firefox.png" width=600px height=auto>
+
+    Tests were completed in following browsers from mobile device (iOS):
+<li>Chrome</li>
+<img src="./media/readme/chromeios.png" width=600px height=auto>
+<li>Safari</li>
+<img src="./media/readme/safariios.png" width=600px height=auto>
+
+    No broken links found, everything works as expected.
+
+  ### Fixed Bugs
+    During bug testing, it was discovered that the .gitignore file was not created, resulting in sensitive information being uploaded to GitHub. To address this issue, I recreated the database on PostgreSQL, updated all credentials in the env.py file and in the Heroku project settings, including the values for DATABASE_URL, SECRET_KEY, and CLOUDINARY_URL.
+
+    Also the env.py was accidentally committed twice and the data was changed completely on both occasions.
+
+    During HTML code testing, there were several errors:
+
+  <img src="./media/readme/html_bugs.png" width=600px height=auto>
+
+    To fix them, I removed the trailing slash from the code line, removed <hr> as a child of the <ul> element, and replaced it with paddings to make the footer part look user-friendly.
+
+
+  ### Unfixed Bugs
+<p>There are no known unfixed bugs in the code</p>
+
+## Deployment
+<p>The site is deployed using GitHub Pages.</p>
+<p>To deploy the site using GitHub Pages:</p>
+<ol>
+<li>Login or signup to Github.</li>
+<li>Go to the repository for this project, https://github.com/Sergutin/CookBook</li>
+<li>At the top of the repository, locate the "Settings" button on the menu.</li>
+<li>Select "Pages" section in the left hand menu.</li>
+<li>From the "Source" dropdown select "Deploy from a Branch". Press "Save".</li>
+<li>The site has now been deployed, please note that the process may take a few minutes before the site goes live.</li>
+</ol>
+
+  ### Cloning and forking
+<p>Forking a repository creates a copy of the original repository on GitHub account.
+To fork a repository in GitHub:</p>
+<ol>
+<li>On GitHub.com, navigate to the repository.</li>
+<li>In the top-right corner of the page, click Fork.</li>
+<li>Select an owner for the forked repository.</li>
+<li>By default, forks are named the same as their parent repositories. You can change the name of the fork to distinguish it further.</li>
+<li>Optionally, add a description of your fork.</li>
+<li>Choose whether to copy only the default branch or all branches to the new fork. For many forking scenarios, such as contributing to open-source projects, you only need to copy the default branch. By default, only the default branch is copied.</li>
+<li>Click Create fork.</li>
+</ol>
+
+<p>Cloning a repository creates a copy of the original repository on our local machine.
+To clone a repository in GitHub:</p>
+<ol>
+<li>On GitHub.com, navigate to your fork of the repository.</li>
+<li>Above the list of files, click  Code.</li>
+<li>Copy the URL for the repository.</li>
+<ul>
+    <li>To clone the repository using HTTPS, click the "Copy" icon on the right of "HTTPS".</li>
+<li>To clone the repository using an SSH key, including a certificate issued by your organization's SSH certificate authority, click SSH, then click the icon on the right to copy it.</li>
+  <li>To clone a repository using GitHub CLI, click GitHub CLI, then click the "Copy" icon on the right.</li>
+</ul>
+</ol>
+
+## Media
+The main page image was taken from 
+## **[Here](https://www.willflyforfood.net/wp-content/uploads/2021/09/irish-food-beef-stew-featured.jpg)**
+
+Author recipe images were taken from:
+
+## **[Dublin Coddle](https://assets.epicurious.com/photos/54b3f9dc21388ef838b10b56/1:1/w_2560%2Cc_limit/51224810_dublin-coddle_1x1.jpg)**
+## **[Shepherd's Pie](https://modernmealmakeover.com/wp-content/uploads/2020/10/IMG_5119-4.jpg)**
+## **[Barmbrack](https://www.irishtimes.com/resizer/r2D6UEcoKkF8fifu9hukowW3OsY=/1600x1600/filters:format(jpg):quality(70)/cloudfront-eu-central-1.images.arcpublishing.com/irishtimes/WOTKX2WAD44J4XJEGDBTSQ7WUU.jpg)**
+## **[Irish stew](https://www.recipetineats.com/wp-content/uploads/2020/03/Irish-Beef-Guinness-Stew_6-SQ.jpg)**
+## **[Seafood chowder](https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRzuYaWTc_BrFkvZ53AJBWNBW-p9IhMJEt-UmmQHxVIIR9_goi9)**
+## **[Irish Champ](https://www.chefnotrequired.com/wp-content/uploads/2018/06/champ-10-7.jpg)**
+## **[Boxty](https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcT8PYJF1JjvzS5DHA8OmAqSWyabnxDVklIPfP_wsafNKmxtp9R0)**
+## **[Bacon and cabbage](https://upload.wikimedia.org/wikipedia/commons/7/78/Bacon_and_Cabbage_in_Ireland.jpg)**
