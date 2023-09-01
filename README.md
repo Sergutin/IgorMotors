@@ -46,12 +46,6 @@ By combining a comprehensive car buying experience with the added convenience of
   * [Cloning and forking](#cloning-and-forking)
 * [Media](#media)
 
-!!!!!! Web marketing strategy B2C
-
-!!!!!! Facebook
-
-
-
 ## Technologies Used
 
   ### HTML
