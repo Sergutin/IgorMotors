@@ -9,7 +9,7 @@
       "price": 7000,
       "category": 1,
       "image_url": "https://res.cloudinary.com/drgwkbuet/image/upload/v1691423964/a6_ha2pgh.jpg",
-      "image": "a6.jpg",
+      "image": "a6.webp",
       "year": "2007"
     }
   },
@@ -65,7 +65,7 @@
         "price": 999999,
         "category": 4,
         "image_url": "https://res.cloudinary.com/drgwkbuet/image/upload/v1691424188/d4_itwcwj.jpg",
-        "image": "d4.jpg",
+        "image": "d4.webp",
         "year": "1971"
       }
     },
@@ -79,7 +79,7 @@
         "price": 8000,
         "category": 5,
         "image_url": "https://res.cloudinary.com/drgwkbuet/image/upload/v1691424227/f_by6exf.jpg",
-        "image": "f.jpg",
+        "image": "f.webp",
         "year": "2013"
       }
     },
@@ -93,7 +93,7 @@
         "price": 16500,
         "category": 6,
         "image_url": "https://res.cloudinary.com/drgwkbuet/image/upload/v1691424301/m_s5smh1.jpg",
-        "image": "m.jpg",
+        "image": "m.webp",
         "year": "2016"
       }
     },
@@ -121,7 +121,7 @@
         "price": 16800,
         "category": 7,
         "image_url": "https://res.cloudinary.com/drgwkbuet/image/upload/v1691424344/c_lmqf89.jpg",
-        "image": "c.jpg",
+        "image": "c.webp",
         "year": "2006"
       }
     },
@@ -135,7 +135,7 @@
         "price": 35000,
         "category": 8,
         "image_url": "https://res.cloudinary.com/drgwkbuet/image/upload/v1691424588/t3_nvo4is.jpg",
-        "image": "t3.jpg",
+        "image": "t3.webp",
         "year": "2020"
       }
     },
@@ -149,7 +149,7 @@
         "price": 2750,
         "category": 9,
         "image_url": "https://res.cloudinary.com/drgwkbuet/image/upload/v1691424628/y_pfjwk6.jpg",
-        "image": "y.jpg",
+        "image": "y.webp",
         "year": "2007"
       }
     },
@@ -163,7 +163,7 @@
         "price": 4000,
         "category": 10,
         "image_url": "https://res.cloudinary.com/drgwkbuet/image/upload/v1691424661/v4_ustz5y.jpg",
-        "image": "v4.jpg",
+        "image": "v4.webp",
         "year": "2010"
       }
     },
