@@ -84,8 +84,6 @@ By combining a comprehensive car buying experience with the added convenience of
 
 <img src="./media/wireframe3.png" width=600px height=auto>
 
-
-
 ## UX Design
 
   ### Overview
@@ -100,10 +98,8 @@ By combining a comprehensive car buying experience with the added convenience of
   ### Main goals
     The main goals of the Igor Motors website are to provide a seamless and user-friendly platform for individuals interested in buying or selling cars.
 
-
 ## Agile methodology
   The Igor Motors project adopts the Agile methodology as its development approach. Agile is a collaborative and iterative framework that emphasizes flexibility, adaptability, and close communication between development teams and stakeholders. All the functionality and development of this project were handled through GitHub, where you can find the **[projects](https://github.com/Sergutin/IgorMotors/issues)**.
-
 
 ## User Stories
 
@@ -130,7 +126,6 @@ By combining a comprehensive car buying experience with the added convenience of
  19. [USER STORY: Clear Feedback for Favorites Changes](https://github.com/Sergutin/IgorMotors/issues/19)
  20. [USER STORY: Contacting Admin via Message](https://github.com/Sergutin/IgorMotors/issues/20)
  21. [USER STORY: Cash for cars](https://github.com/Sergutin/IgorMotors/issues/21)
-
 
 ## Features
 
@@ -315,7 +310,6 @@ If the page that users are looking for doesn't exist, they are provided with a c
 | Admin can delete order | Pass |
 | Admin can manage order details | Pass |
 
-
   ### HTML Test
     No errors were found when passing through the official HTML validator.
 
@@ -482,7 +476,7 @@ If the page that users are looking for doesn't exist, they are provided with a c
 
 
   ### Lighthouse
-    The website was evaluated using the Lighthouse tool, which resulted in an overall average performance score of 97.4% for desktop devices:
+    The website was evaluated using the Lighthouse tool, which resulted in an overall average performance score of 98.07% for desktop devices:
 
 <img src="./media/readme/lighthouse/main_d.png" width=600px height=auto>
 
@@ -555,9 +549,9 @@ If the page that users are looking for doesn't exist, they are provided with a c
     Tests were completed in following browsers from mobile device (iOS):
 
 <li>Chrome</li>
-<img src="./media/readme/chromeios.jpeg" width=600px height=auto>
+<img src="./media/readme/chromeios.jpeg" width=300px height=auto>
 <li>Safari</li>
-<img src="./media/readme/safariios.jpeg" width=600px height=auto>
+<img src="./media/readme/safariios.jpeg" width=300px height=auto>
 
     No broken links found, everything works as expected.
 
