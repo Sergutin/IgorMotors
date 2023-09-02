@@ -536,7 +536,7 @@ If the page that users are looking for doesn't exist, they are provided with a c
 
   ### Manual testing
     Responsiveness was tested in different browsers:
-    
+
 <li>Chrome</li>
 <img src="./media/readme/chrome.png" width=600px height=auto>
 <li>Safari</li>
@@ -552,6 +552,61 @@ If the page that users are looking for doesn't exist, they are provided with a c
 <img src="./media/readme/safariios.jpeg" width=600px height=auto>
 
     No broken links found, everything works as expected.
+
+  ### Marketing Strategy
+
+    Marketing Strategy for Igor Motors
+
+  Target Audience:
+  Our B2C marketing strategy for Igor Motors will focus on attracting car enthusiasts, individuals seeking cars for personal use, and those looking to sell their existing vehicles.
+
+  1. Personalized Online Experience:
+  We will develop a user-friendly website and mobile app that offer seamless navigation for browsing and purchasing vehicles. Implementing advanced search filters will allow customers to find their desired cars quickly. Additionally, tailored recommendations based on their preferences will enhance user engagement.
+
+  2. Compelling Visual Content:
+  High-quality images and videos (in the future) of vehicles will be showcased on our platforms to provide potential buyers with an immersive view of each car. The visual content will highlight the key features and unique selling points, helping customers make informed decisions.
+
+  3. Transparent Information:
+  Transparency is crucial. Detailed information about each car's history, condition, mileage, and features will be provided. Carfax reports and service histories will be accessible to instill confidence in our customers.
+
+  4. Social Media Engagement:
+  We will actively engage on social media platforms, sharing success stories, informative car reviews, maintenance tips, and latest arrivals. Running engaging contests and polls will foster a sense of community and encourage user-generated content.
+  
+  Facebook page was created for Igor Motors to further amplify our brand presence and engage with a wider audience. We will leverage the platform to showcase our latest vehicle arrivals, share informative content, and interact directly with customers. Regular updates about new inventory, special offers, and behind-the-scenes glimpses into our dealership will foster a sense of community and keep our followers engaged. Through targeted ads and promoted posts, we will reach potential customers based on their preferences, demographics, and interests, effectively expanding our reach and driving traffic to our website. Our Facebook page will serve as a dynamic hub where car enthusiasts can connect, share their passion, and stay informed about all things related to Igor Motors. 
+
+  <img src="./media/fb.png" width=600px height=auto>
+
+  <img src="./media/fb2.png" width=600px height=auto>
+
+  <img src="./media/fb3.png" width=600px height=auto>
+
+
+  5. SEO and Content Marketing:
+  We will create valuable and informative blog posts, articles, and videos related to car buying, maintenance, and industry trends. Optimizing our content for search engines will help us rank higher on search results pages and establish ourselves as a trusted source of automotive information.
+
+  6. Email Marketing:
+  Regular newsletters will keep our customers updated about new arrivals, special deals, and exclusive offers. Personalized emails based on user preferences and browsing history will enhance customer engagement.
+
+  7. Trade-in and Cash for Cars Service:
+  Promote our cash for cars service, targeting individuals looking to sell their existing vehicles. Highlight the hassle-free process, fair evaluations, and quick payment turnaround.
+
+  8. Partnerships and Collaborations:
+  Collaborate with local auto-related businesses such as auto repair shops, car customization centers, and car accessory stores. These partnerships can offer mutual benefits and expand our customer base.
+
+  9. Test Drive Events:
+  Organize periodic test drive events where potential customers can experience the performance and features of the vehicles firsthand. This can help build trust and drive conversions.
+
+  10. Customer Reviews and Testimonials:
+  Genuine customer reviews and testimonials will be prominently displayed on our website and social media. Positive feedback will enhance our reputation and credibility.
+
+  11. Loyalty Programs and Referral Incentives:
+  Introduce loyalty programs for returning customers and referral incentives for customers who refer others to our platform. This will promote customer retention and word-of-mouth marketing.
+
+  12. Analytics and Data Insights:
+  Regularly monitor website and app analytics to track user behavior, identify popular vehicles, and measure the effectiveness of our marketing campaigns. This data-driven approach will guide our strategy refinement.
+
+  By implementing this marketing strategy, Igor Motors aims to establish itself as the go-to destination for car enthusiasts and those seeking reliable cars for personal use or selling their vehicles.
+
 
   ### Fixed Bugs
     During bug testing, it was discovered that the .gitignore file was not created, resulting in sensitive information being uploaded to GitHub. To address this issue, I recreated the database on PostgreSQL, updated all credentials in the env.py file and in the Heroku project settings, including the values for DATABASE_URL, SECRET_KEY, and CLOUDINARY_URL.
