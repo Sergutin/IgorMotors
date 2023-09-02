@@ -81,7 +81,7 @@ By combining a comprehensive car buying experience with the added convenience of
 
 <img src="./media/wireframe2.png" width=600px height=auto>
 
-<img src="./media/wireframe3.png" width=600px height=auto>
+<img src="./media/wireframe3.png" width=300px height=auto>
 
 ## UX Design
 
