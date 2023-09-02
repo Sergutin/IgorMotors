@@ -69,7 +69,6 @@
             
             $('#id_car_make').change(function() {
                 $.ajaxSetup({
-                    // {headers: {'X-CSRFToken': csrftoken}}
                     headers: { 'X-CSRFToken': '{{ csrftoken }}' }
                 });
             

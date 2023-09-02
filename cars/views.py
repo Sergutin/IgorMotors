@@ -295,13 +295,6 @@ def calculate_price(
     car_transmission,
     car_engine
 ):
-    print("Received choices: ")
-    print("Make:", car_make)
-    print("Model:", car_model)
-    print("Year:", car_year)
-    print("Mileage:", car_mileage)
-    print("Transmission:", car_transmission)
-    print("Engine:", car_engine)
 
     price_data = {
         ('17', 'Cayenne', '2018', '18000', 'Automatic', '3.0'): 53000,

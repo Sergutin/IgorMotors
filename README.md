@@ -563,15 +563,15 @@ If the page that users are looking for doesn't exist, they are provided with a c
 
 
   ### Fixed Bugs
-    During bug testing, it was discovered that the .gitignore file was not created, resulting in sensitive information being uploaded to GitHub. To address this issue, I recreated the database on PostgreSQL, updated all credentials in the env.py file and in the Heroku project settings, including the values for DATABASE_URL, SECRET_KEY, and CLOUDINARY_URL.
+    Stripe Webhooks have failed multiple times:
 
-    Also the env.py was accidentally committed twice and the data was changed completely on both occasions.
+  <img src="./media/whfailed.png" width=300px height=auto>
 
-    During HTML code testing, there were several errors:
+    Solution: 
 
-  <img src="./media/readme/html_bugs.png" width=600px height=auto>
+  Import 'stripe' into both 'webhooks.py' and 'webhook_handler.py'.
 
-    To fix them, I removed the trailing slash from the code line, removed <hr> as a child of the <ul> element, and replaced it with paddings to make the footer part look user-friendly.
+
 
 
   ### Unfixed Bugs
