@@ -516,6 +516,12 @@ If the page that users are looking for doesn't exist, they are provided with a c
 
 <img src="./media/readme/lighthouse/main_m.png" width=600px height=auto>
 
+<img src="./media/readme/lighthouse/signup_m.png" width=600px height=auto>
+
+<img src="./media/readme/lighthouse/login_m.png" width=600px height=auto>
+
+<img src="./media/readme/lighthouse/logout_m.png" width=600px height=auto>
+
 <img src="./media/readme/lighthouse/allcars_m.png" width=600px height=auto>
 
 <img src="./media/readme/lighthouse/bag_m.png" width=600px height=auto>
@@ -532,15 +538,9 @@ If the page that users are looking for doesn't exist, they are provided with a c
 
 <img src="./media/readme/lighthouse/favorites_m.png" width=600px height=auto>
 
-<img src="./media/readme/lighthouse/login_m.png" width=600px height=auto>
-
-<img src="./media/readme/lighthouse/logout_m.png" width=600px height=auto>
-
 <img src="./media/readme/lighthouse/orders_m.png" width=600px height=auto>
 
 <img src="./media/readme/lighthouse/profile_m.png" width=600px height=auto>
-
-<img src="./media/readme/lighthouse/signup_m.png" width=600px height=auto>
 
   ### Manual testing
     Responsiveness was tested in different browsers:
