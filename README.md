@@ -6,7 +6,7 @@ Users can explore a wide range of available cars on the platform, with detailed 
 
 By combining a comprehensive car buying experience with the added convenience of receiving cash offers for selling vehicles, "Igor Motors" aims to create a seamless and efficient marketplace for both buyers and sellers in the automotive industry.</p>
 
-<img src="./media/readme/readme.png" width=600px height=auto>
+<img src="./media/ami.png" width=600px height=auto>
 
 ## **[Live site](https://igormotors-fa74a181bdfa.herokuapp.com/)**
 
@@ -474,18 +474,69 @@ If the page that users are looking for doesn't exist, they are provided with a c
 
 
   ### Lighthouse
-    The website was measured using Lighthouse tool, performance 100% was calculated for desktop device:
+    The website was evaluated using the Lighthouse tool, which resulted in an overall average performance score of 97.4% for desktop devices:
 
-<img src="./media/readme/light_d1.png" width=600px height=auto>
-<img src="./media/readme/light_d2.png" width=600px height=auto>
+<img src="./media/readme/lighthouse/main_d.png" width=600px height=auto>
 
-    and 95-97% for mobile device:
-<img src="./media/readme/light_m1.png" width=600px height=auto>
-<img src="./media/readme/light_m2.png" width=600px height=auto>
-<img src="./media/readme/light_m3.png" width=600px height=auto>
+<img src="./media/readme/lighthouse/allcars_d.png" width=600px height=auto>
+
+<img src="./media/readme/lighthouse/bag_d.png" width=600px height=auto>
+
+<img src="./media/readme/lighthouse/cardetails_d.png" width=600px height=auto>
+
+<img src="./media/readme/lighthouse/carmanagement_d.png" width=600px height=auto>
+
+<img src="./media/readme/lighthouse/cash_d.png" width=600px height=auto>
+
+<img src="./media/readme/lighthouse/checkout_d.png" width=600px height=auto>
+
+<img src="./media/readme/lighthouse/contact_d.png" width=600px height=auto>
+
+<img src="./media/readme/lighthouse/favorites_d.png" width=600px height=auto>
+
+<img src="./media/readme/lighthouse/login_d.png" width=600px height=auto>
+
+<img src="./media/readme/lighthouse/logout_d.png" width=600px height=auto>
+
+<img src="./media/readme/lighthouse/orders_d.png" width=600px height=auto>
+
+<img src="./media/readme/lighthouse/profile_d.png" width=600px height=auto>
+
+<img src="./media/readme/lighthouse/signup_d.png" width=600px height=auto>
+
+    While for mobile devices, the performance exhibited a decrease in the Lighthouse score, which is often attributed to factors such as slower network connections, varying device capabilities, and the need to optimize for different screen sizes.:
+
+<img src="./media/readme/lighthouse/main_m.png" width=600px height=auto>
+
+<img src="./media/readme/lighthouse/allcars_m.png" width=600px height=auto>
+
+<img src="./media/readme/lighthouse/bag_m.png" width=600px height=auto>
+
+<img src="./media/readme/lighthouse/cardetails_m.png" width=600px height=auto>
+
+<img src="./media/readme/lighthouse/carmanagement_m.png" width=600px height=auto>
+
+<img src="./media/readme/lighthouse/cash_m.png" width=600px height=auto>
+
+<img src="./media/readme/lighthouse/checkout_m.png" width=600px height=auto>
+
+<img src="./media/readme/lighthouse/contact_m.png" width=600px height=auto>
+
+<img src="./media/readme/lighthouse/favorites_m.png" width=600px height=auto>
+
+<img src="./media/readme/lighthouse/login_m.png" width=600px height=auto>
+
+<img src="./media/readme/lighthouse/logout_m.png" width=600px height=auto>
+
+<img src="./media/readme/lighthouse/orders_m.png" width=600px height=auto>
+
+<img src="./media/readme/lighthouse/profile_m.png" width=600px height=auto>
+
+<img src="./media/readme/lighthouse/signup_m.png" width=600px height=auto>
 
   ### Manual testing
     Responsiveness was tested in different browsers:
+    
 <li>Chrome</li>
 <img src="./media/readme/chrome.png" width=600px height=auto>
 <li>Safari</li>
@@ -494,10 +545,11 @@ If the page that users are looking for doesn't exist, they are provided with a c
 <img src="./media/readme/firefox.png" width=600px height=auto>
 
     Tests were completed in following browsers from mobile device (iOS):
+
 <li>Chrome</li>
-<img src="./media/readme/chromeios.png" width=600px height=auto>
+<img src="./media/readme/chromeios.jpeg" width=600px height=auto>
 <li>Safari</li>
-<img src="./media/readme/safariios.png" width=600px height=auto>
+<img src="./media/readme/safariios.jpeg" width=600px height=auto>
 
     No broken links found, everything works as expected.
 
