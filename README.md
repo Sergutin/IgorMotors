@@ -76,6 +76,15 @@ By combining a comprehensive car buying experience with the added convenience of
 
 ## Wireframes
 
+    Balsamiq wireframes were employed to craft visual representations of the website's appearance and functionality. Presented here are the wireframes that mapped out the site's layout. It's worth noting that certain adjustments or exclusions were introduced during development, prompted by considerations of time and feasibility.
+
+<img src="./media/wireframe.png" width=600px height=auto>
+
+<img src="./media/wireframe2.png" width=600px height=auto>
+
+<img src="./media/wireframe3.png" width=600px height=auto>
+
+
 
 ## UX Design
 
@@ -334,7 +343,7 @@ If the page that users are looking for doesn't exist, they are provided with a c
 
 <img src="./media/readme/html/order_history.png" width=600px height=auto>
 
-<img src="./media/readme/html/add_car.png.png" width=600px height=auto>
+<img src="./media/readme/html/add_car.png" width=600px height=auto>
 
   ### CSS Test
     No errors were found when passing through the official (Jigsaw) CSS validator.
