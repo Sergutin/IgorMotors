@@ -563,7 +563,8 @@ If the page that users are looking for doesn't exist, they are provided with a c
 
 
   ### Fixed Bugs
-    Stripe Webhooks have failed multiple times:
+
+  1. Stripe Webhooks have failed multiple times:
 
   <img src="./media/whfailed.png" width=300px height=auto>
 
@@ -571,6 +572,13 @@ If the page that users are looking for doesn't exist, they are provided with a c
 
   Import 'stripe' into both 'webhooks.py' and 'webhook_handler.py'.
 
+  2. There was a Stripe payment error. The price of the car 'Daimler DS420' was initially set at 1,000,000 EUR. However, during the testing phase, it was found that Stripe only accepts amounts up to 999,999.99 EUR. 
+
+  <img src="./media/stripeerror.png" width=400px height=auto>
+
+    Solution: 
+
+  The car price was adjusted to 999,999 EUR.
 
 
 
