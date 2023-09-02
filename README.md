@@ -555,12 +555,6 @@ If the page that users are looking for doesn't exist, they are provided with a c
 
     No broken links found, everything works as expected.
 
-  
-
-
-
-
-
 
   ### Fixed Bugs
 
@@ -580,7 +574,11 @@ If the page that users are looking for doesn't exist, they are provided with a c
 
   The car price was adjusted to 999,999 EUR.
 
+  3. The formula that calculates the 'Cash for Cars' feature didn’t work. The reason is that the formula uses the 'car make' ID from the database IDs, which are different from the ones assigned by the admin.
 
+    Solution: 
+
+  Add a 'print' statement to check the values, and then adjust the 'car make ID' accordingly to match the 'database ID' value.
 
   ### Unfixed Bugs
 <p>There are no known unfixed bugs in the code</p>
@@ -683,6 +681,3 @@ The main page image was taken from
 ## **[Here](https://www.autonews.com/future-product/tesla-future-product-2023-kicks-next-big-cycle)**
 
 All car images (except for the main page image) were taken by the author (Igor Sergutin), as all the presented cars were/are in the author's ownership.
-
-## Credits
-
