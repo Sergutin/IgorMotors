@@ -47,7 +47,6 @@ By combining a comprehensive car buying experience with the added convenience of
 * [Deployment](#deployment)
   * [Cloning and forking](#cloning-and-forking)
 * [Media](#media)
-* [Credits](#credits)
 
 ## Technologies Used
 
