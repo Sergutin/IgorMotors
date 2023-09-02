@@ -25,6 +25,7 @@ By combining a comprehensive car buying experience with the added convenience of
   * [Cloudinary](#cloudinary)
   * [Heroku PostgreSQL](#heroku-postgresql)
   * [Amazon AWS](#amazon-aws)
+* [Wireframes](#wireframes)
 * [UX Design](#ux-design)
   * [Overview](#overview)
   * [Design](#design)
@@ -42,9 +43,11 @@ By combining a comprehensive car buying experience with the added convenience of
   * [Manual Testing](#manual-testing)
   * [Fixed Bugs](#fixed-bugs)
   * [Unfixed Bugs](#unfixed-bugs)
+* [Marketing Strategy](#marketing-strategy)
 * [Deployment](#deployment)
   * [Cloning and forking](#cloning-and-forking)
 * [Media](#media)
+* [Credits](#credits)
 
 ## Technologies Used
 
@@ -70,6 +73,8 @@ By combining a comprehensive car buying experience with the added convenience of
     For database management in my Igor Motors project, I turned to Heroku PostgreSQL. This fully managed and scalable relational database service offered by Heroku ensured the efficient storage, retrieval, and management of data. Heroku PostgreSQL's capabilities supported the seamless functioning of the platform, contributing to a reliable and robust user experience.
   ### Amazon AWS
     I harnessed the power of Amazon Web Services (AWS) for my Igor Motors project by utilizing Amazon S3 for efficient storage and Amazon IAM for secure access control. With Amazon S3, I seamlessly managed and stored media files, ensuring quick and reliable content delivery. Meanwhile, Amazon IAM provided granular control over user permissions, enhancing security and compliance throughout the platform.
+
+## Wireframes
 
 
 ## UX Design
@@ -467,12 +472,6 @@ If the page that users are looking for doesn't exist, they are provided with a c
 <img src="./media/readme/jshint/jshint profiles.png" width=600px height=auto>
 
 
-
-
-
-
-
-
   ### Lighthouse
     The website was evaluated using the Lighthouse tool, which resulted in an overall average performance score of 97.4% for desktop devices:
 
@@ -553,7 +552,30 @@ If the page that users are looking for doesn't exist, they are provided with a c
 
     No broken links found, everything works as expected.
 
-  ### Marketing Strategy
+  
+
+
+
+
+
+
+  ### Fixed Bugs
+    During bug testing, it was discovered that the .gitignore file was not created, resulting in sensitive information being uploaded to GitHub. To address this issue, I recreated the database on PostgreSQL, updated all credentials in the env.py file and in the Heroku project settings, including the values for DATABASE_URL, SECRET_KEY, and CLOUDINARY_URL.
+
+    Also the env.py was accidentally committed twice and the data was changed completely on both occasions.
+
+    During HTML code testing, there were several errors:
+
+  <img src="./media/readme/html_bugs.png" width=600px height=auto>
+
+    To fix them, I removed the trailing slash from the code line, removed <hr> as a child of the <ul> element, and replaced it with paddings to make the footer part look user-friendly.
+
+
+  ### Unfixed Bugs
+<p>There are no known unfixed bugs in the code</p>
+
+
+## Marketing Strategy
 
     Marketing Strategy for Igor Motors
 
@@ -579,7 +601,6 @@ If the page that users are looking for doesn't exist, they are provided with a c
   <img src="./media/fb2.png" width=600px height=auto>
 
   <img src="./media/fb3.png" width=600px height=auto>
-
 
   5. SEO and Content Marketing:
   We will create valuable and informative blog posts, articles, and videos related to car buying, maintenance, and industry trends. Optimizing our content for search engines will help us rank higher on search results pages and establish ourselves as a trusted source of automotive information.
@@ -608,27 +629,12 @@ If the page that users are looking for doesn't exist, they are provided with a c
   By implementing this marketing strategy, Igor Motors aims to establish itself as the go-to destination for car enthusiasts and those seeking reliable cars for personal use or selling their vehicles.
 
 
-  ### Fixed Bugs
-    During bug testing, it was discovered that the .gitignore file was not created, resulting in sensitive information being uploaded to GitHub. To address this issue, I recreated the database on PostgreSQL, updated all credentials in the env.py file and in the Heroku project settings, including the values for DATABASE_URL, SECRET_KEY, and CLOUDINARY_URL.
-
-    Also the env.py was accidentally committed twice and the data was changed completely on both occasions.
-
-    During HTML code testing, there were several errors:
-
-  <img src="./media/readme/html_bugs.png" width=600px height=auto>
-
-    To fix them, I removed the trailing slash from the code line, removed <hr> as a child of the <ul> element, and replaced it with paddings to make the footer part look user-friendly.
-
-
-  ### Unfixed Bugs
-<p>There are no known unfixed bugs in the code</p>
-
 ## Deployment
 <p>The site is deployed using GitHub Pages.</p>
 <p>To deploy the site using GitHub Pages:</p>
 <ol>
 <li>Login or signup to Github.</li>
-<li>Go to the repository for this project, https://github.com/Sergutin/CookBook</li>
+<li>Go to the repository for this project, https://github.com/Sergutin/IgorMotors</li>
 <li>At the top of the repository, locate the "Settings" button on the menu.</li>
 <li>Select "Pages" section in the left hand menu.</li>
 <li>From the "Source" dropdown select "Deploy from a Branch". Press "Save".</li>
@@ -663,15 +669,9 @@ To clone a repository in GitHub:</p>
 
 ## Media
 The main page image was taken from 
-## **[Here](https://www.willflyforfood.net/wp-content/uploads/2021/09/irish-food-beef-stew-featured.jpg)**
+## **[Here](https://www.autonews.com/future-product/tesla-future-product-2023-kicks-next-big-cycle)**
 
-Author recipe images were taken from:
+All car images (except for the main page image) were taken by the author (Igor Sergutin), as all the presented cars were/are in the author's ownership.
 
-## **[Dublin Coddle](https://assets.epicurious.com/photos/54b3f9dc21388ef838b10b56/1:1/w_2560%2Cc_limit/51224810_dublin-coddle_1x1.jpg)**
-## **[Shepherd's Pie](https://modernmealmakeover.com/wp-content/uploads/2020/10/IMG_5119-4.jpg)**
-## **[Barmbrack](https://www.irishtimes.com/resizer/r2D6UEcoKkF8fifu9hukowW3OsY=/1600x1600/filters:format(jpg):quality(70)/cloudfront-eu-central-1.images.arcpublishing.com/irishtimes/WOTKX2WAD44J4XJEGDBTSQ7WUU.jpg)**
-## **[Irish stew](https://www.recipetineats.com/wp-content/uploads/2020/03/Irish-Beef-Guinness-Stew_6-SQ.jpg)**
-## **[Seafood chowder](https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRzuYaWTc_BrFkvZ53AJBWNBW-p9IhMJEt-UmmQHxVIIR9_goi9)**
-## **[Irish Champ](https://www.chefnotrequired.com/wp-content/uploads/2018/06/champ-10-7.jpg)**
-## **[Boxty](https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcT8PYJF1JjvzS5DHA8OmAqSWyabnxDVklIPfP_wsafNKmxtp9R0)**
-## **[Bacon and cabbage](https://upload.wikimedia.org/wikipedia/commons/7/78/Bacon_and_Cabbage_in_Ireland.jpg)**
+## Credits
+
