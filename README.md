@@ -51,31 +51,31 @@ By combining a comprehensive car buying experience with the added convenience of
 ## Technologies Used
 
   ### HTML
-    I used HTML technology to structure and present the content of my Igor Motors Django project. HTML, which stands for HyperText Markup Language, is the fundamental building block of web pages. Through the use of HTML, I was able to create the visual layout and arrangement of various elements within the project.
+  I used HTML technology to structure and present the content of my Igor Motors Django project. HTML, which stands for HyperText Markup Language, is the fundamental building block of web pages. Through the use of HTML, I was able to create the visual layout and arrangement of various elements within the project.
 
-    With HTML, I defined the structure of each web page, including headings, paragraphs, lists, and other components. By employing HTML tags and attributes, I organized the content into a logical hierarchy, ensuring proper formatting and readability for users.
+  With HTML, I defined the structure of each web page, including headings, paragraphs, lists, and other components. By employing HTML tags and attributes, I organized the content into a logical hierarchy, ensuring proper formatting and readability for users.
     
   ### CSS
-    CSS enhanced the visual appeal of my Igor Motors Django project. By defining styles for elements like colors, fonts, spacing, and responsive layouts, CSS ensured a consistent and attractive design across devices, elevating the user experience
+  CSS enhanced the visual appeal of my Igor Motors Django project. By defining styles for elements like colors, fonts, spacing, and responsive layouts, CSS ensured a consistent and attractive design across devices, elevating the user experience
 
   ### Python
-    I utilized Python as the primary programming language for my Igor Motors Django project. Python's versatility and robustness were instrumental in building the backend functionality of the platform. I leveraged Django, a powerful Python web framework, to handle routing, database management, and user authentication.
+  I utilized Python as the primary programming language for my Igor Motors Django project. Python's versatility and robustness were instrumental in building the backend functionality of the platform. I leveraged Django, a powerful Python web framework, to handle routing, database management, and user authentication.
 
-    Python's clean and readable syntax facilitated efficient coding and debugging. With its extensive library support, I implemented various features such as handling user input, processing data, and integrating third-party services.
+  Python's clean and readable syntax facilitated efficient coding and debugging. With its extensive library support, I implemented various features such as handling user input, processing data, and integrating third-party services.
   ### Django
-    Django, a high-level Python web framework, was the cornerstone of my Igor Motors project. With Django's built-in tools, I efficiently handled URL routing, database management, and user authentication. This framework streamlined the development process, allowing me to focus on creating a seamless and interactive platform for Igor Motors.
+  Django, a high-level Python web framework, was the cornerstone of my Igor Motors project. With Django's built-in tools, I efficiently handled URL routing, database management, and user authentication. This framework streamlined the development process, allowing me to focus on creating a seamless and interactive platform for Igor Motors.
   ### Bootstrap 5
-    Bootstrap 5, a popular front-end framework, played a vital role in shaping the visual layout and responsiveness of my Igor Motors project. By leveraging Bootstrap's pre-designed components and grid system, I established a consistent and modern design across the platform. This framework enabled efficient development and ensured a user-friendly experience, adapting seamlessly to various screen sizes and devices. 
+  Bootstrap 5, a popular front-end framework, played a vital role in shaping the visual layout and responsiveness of my Igor Motors project. By leveraging Bootstrap's pre-designed components and grid system, I established a consistent and modern design across the platform. This framework enabled efficient development and ensured a user-friendly experience, adapting seamlessly to various screen sizes and devices. 
   ### Cloudinary
-    Cloudinary was integral to optimizing media management in my Igor Motors project. As a cloud-based media storage and delivery platform, Cloudinary facilitated efficient uploading, storage, and delivery of images for cars and other visual content. This enhanced the platform's performance by ensuring quick loading times and high-quality images, contributing to a seamless user experience.
+  Cloudinary was integral to optimizing media management in my Igor Motors project. As a cloud-based media storage and delivery platform, Cloudinary facilitated efficient uploading, storage, and delivery of images for cars and other visual content. This enhanced the platform's performance by ensuring quick loading times and high-quality images, contributing to a seamless user experience.
   ### Heroku PostgreSQL
-    For database management in my Igor Motors project, I turned to Heroku PostgreSQL. This fully managed and scalable relational database service offered by Heroku ensured the efficient storage, retrieval, and management of data. Heroku PostgreSQL's capabilities supported the seamless functioning of the platform, contributing to a reliable and robust user experience.
+  For database management in my Igor Motors project, I turned to Heroku PostgreSQL. This fully managed and scalable relational database service offered by Heroku ensured the efficient storage, retrieval, and management of data. Heroku PostgreSQL's capabilities supported the seamless functioning of the platform, contributing to a reliable and robust user experience.
   ### Amazon AWS
-    I harnessed the power of Amazon Web Services (AWS) for my Igor Motors project by utilizing Amazon S3 for efficient storage and Amazon IAM for secure access control. With Amazon S3, I seamlessly managed and stored media files, ensuring quick and reliable content delivery. Meanwhile, Amazon IAM provided granular control over user permissions, enhancing security and compliance throughout the platform.
+  I harnessed the power of Amazon Web Services (AWS) for my Igor Motors project by utilizing Amazon S3 for efficient storage and Amazon IAM for secure access control. With Amazon S3, I seamlessly managed and stored media files, ensuring quick and reliable content delivery. Meanwhile, Amazon IAM provided granular control over user permissions, enhancing security and compliance throughout the platform.
 
 ## Wireframes
 
-    Balsamiq wireframes were employed to craft visual representations of the website's appearance and functionality. Presented here are the wireframes that mapped out the site's layout. It's worth noting that certain adjustments or exclusions were introduced during development, prompted by considerations of time and feasibility.
+  Balsamiq wireframes were employed to craft visual representations of the website's appearance and functionality. Presented here are the wireframes that mapped out the site's layout. It's worth noting that certain adjustments or exclusions were introduced during development, prompted by considerations of time and feasibility.
 
 <img src="./media/wireframe.png" width=600px height=auto>
 
@@ -86,23 +86,23 @@ By combining a comprehensive car buying experience with the added convenience of
 ## UX Design
 
   ### Overview
-    Igor Motors is an innovative online platform that revolutionizes the car buying and selling experience. Seamlessly combining user-friendly interfaces with advanced technologies, the platform enables users to explore a wide range of vehicles for purchase while also offering the unique ability to receive instant cash offers for their own cars. 
+  Igor Motors is an innovative online platform that revolutionizes the car buying and selling experience. Seamlessly combining user-friendly interfaces with advanced technologies, the platform enables users to explore a wide range of vehicles for purchase while also offering the unique ability to receive instant cash offers for their own cars. 
 
   ### Design 
-    The design of Igor Motors embodies a harmonious fusion of aesthetics and functionality. Employing Bootstrap 5, the platform boasts a sleek and modern interface that adapts seamlessly to various devices and screen sizes, ensuring a consistently engaging user experience. The integration of carefully selected colors, typography, and layout structures creates a visually appealing environment, enhancing readability and user interaction. Cloudinary optimizes media management, ensuring high-quality images, while Amazon AWS services like S3 and IAM contribute to a secure and efficient backend. In essence, Igor Motors' design encapsulates both form and function, catering to users seeking a sophisticated and intuitive car buying and selling platform.
+  The design of Igor Motors embodies a harmonious fusion of aesthetics and functionality. Employing Bootstrap 5, the platform boasts a sleek and modern interface that adapts seamlessly to various devices and screen sizes, ensuring a consistently engaging user experience. The integration of carefully selected colors, typography, and layout structures creates a visually appealing environment, enhancing readability and user interaction. Cloudinary optimizes media management, ensuring high-quality images, while Amazon AWS services like S3 and IAM contribute to a secure and efficient backend. In essence, Igor Motors' design encapsulates both form and function, catering to users seeking a sophisticated and intuitive car buying and selling platform.
 
   ### Website User
-    The Igor Motors website would cater to a diverse range of users with varying automotive needs. Potential users include individuals interested in purchasing vehicles, seeking a wide selection of cars with detailed information and images. Additionally, individuals looking to sell their cars can benefit from the platform's cash offer feature, streamlining the process. Car enthusiasts, first-time buyers, and sellers alike would find value in the user-friendly interface and comprehensive features provided by Igor Motors.
+  The Igor Motors website would cater to a diverse range of users with varying automotive needs. Potential users include individuals interested in purchasing vehicles, seeking a wide selection of cars with detailed information and images. Additionally, individuals looking to sell their cars can benefit from the platform's cash offer feature, streamlining the process. Car enthusiasts, first-time buyers, and sellers alike would find value in the user-friendly interface and comprehensive features provided by Igor Motors.
 
   ### Main goals
-    The main goals of the Igor Motors website are to provide a seamless and user-friendly platform for individuals interested in buying or selling cars.
+  The main goals of the Igor Motors website are to provide a seamless and user-friendly platform for individuals interested in buying or selling cars.
 
 ## Agile methodology
   The Igor Motors project adopts the Agile methodology as its development approach. Agile is a collaborative and iterative framework that emphasizes flexibility, adaptability, and close communication between development teams and stakeholders. All the functionality and development of this project were handled through GitHub, where you can find the **[projects](https://github.com/Sergutin/IgorMotors/issues)**.
 
 ## User Stories
 
-    To access the user stories, you can simply click on them below. User stories are a way to describe the desired functionality or features from the perspective of the end user. 
+  To access the user stories, you can simply click on them below. User stories are a way to describe the desired functionality or features from the perspective of the end user. 
 
  1. [USER STORY: Registration](https://github.com/Sergutin/IgorMotors/issues/1)
  2. [USER STORY: Log in](https://github.com/Sergutin/IgorMotors/issues/2)
@@ -128,11 +128,11 @@ By combining a comprehensive car buying experience with the added convenience of
 
 ## Features
 
-    The home page of the Igor Motors project consists of a dynamic and inviting layout that serves as the gateway to the platform's offerings. This page encompasses a variety of essential components designed to engage and inform users. It includes a visually appealing header with the Igor Motors title and navigation menu, allowing users to easily access different sections of the platform.:
+  The home page of the Igor Motors project consists of a dynamic and inviting layout that serves as the gateway to the platform's offerings. This page encompasses a variety of essential components designed to engage and inform users. It includes a visually appealing header with the Igor Motors title and navigation menu, allowing users to easily access different sections of the platform.:
 
 <img src="./media/readme/main.png" width=600px height=auto>
 
-    User features implemented are as follows:
+  User features implemented are as follows:
 
 - Users can register an account
 
@@ -189,7 +189,7 @@ By combining a comprehensive car buying experience with the added convenience of
 <img src="./media/readme/bag.png" width=600px height=auto>
 <img src="./media/readme/checkout.png" width=600px height=auto>
 
-  Furthermore, a notification is provided every time the user performs the following actions:
+Furthermore, a notification is provided every time the user performs the following actions:
 
 - User successfully logs in.
 
@@ -310,7 +310,7 @@ If the page that users are looking for doesn't exist, they are provided with a c
 | Admin can manage order details | Pass |
 
   ### HTML Test
-    No errors were found when passing through the official HTML validator.
+  No errors were found when passing through the official HTML validator.
 
 <img src="./media/readme/html/main.png" width=600px height=auto>
 
@@ -339,7 +339,7 @@ If the page that users are looking for doesn't exist, they are provided with a c
 <img src="./media/readme/html/add_car.png" width=600px height=auto>
 
   ### CSS Test
-    No errors were found when passing through the official (Jigsaw) CSS validator.
+  No errors were found when passing through the official (Jigsaw) CSS validator.
 
 <img src="./media/readme/css/main page.png" width=600px height=auto>
 
@@ -368,9 +368,9 @@ If the page that users are looking for doesn't exist, they are provided with a c
 <img src="./media/readme/css/car management.png" width=600px height=auto>
 
   ### CI Python Linter 
-    No errors were found when passing through the CI Python Linter validator.
+  No errors were found when passing through the CI Python Linter validator.
 
-    Bag:
+  Bag:
 
 <img src="./media/readme/python/bag/admin.png" width=600px height=auto>
 
@@ -475,7 +475,7 @@ If the page that users are looking for doesn't exist, they are provided with a c
 
 
   ### Lighthouse
-    The website was evaluated using the Lighthouse tool, which resulted in an overall average performance score of 98.07% for desktop devices:
+  The website was evaluated using the Lighthouse tool, which resulted in an overall average performance score of 98.07% for desktop devices:
 
 <img src="./media/readme/lighthouse/main_d.png" width=600px height=auto>
 
@@ -505,7 +505,7 @@ If the page that users are looking for doesn't exist, they are provided with a c
 
 <img src="./media/readme/lighthouse/signup_d.png" width=600px height=auto>
 
-    While for mobile devices, the performance exhibited a decrease in the Lighthouse score, which is often attributed to factors such as slower network connections, varying device capabilities, and the need to optimize for different screen sizes.:
+  While for mobile devices, the performance exhibited a decrease in the Lighthouse score, which is often attributed to factors such as slower network connections, varying device capabilities, and the need to optimize for different screen sizes.:
 
 <img src="./media/readme/lighthouse/main_m.png" width=600px height=auto>
 
@@ -536,7 +536,7 @@ If the page that users are looking for doesn't exist, they are provided with a c
 <img src="./media/readme/lighthouse/profile_m.png" width=600px height=auto>
 
   ### Manual testing
-    Responsiveness was tested in different browsers:
+  Responsiveness was tested in different browsers:
 
 <li>Chrome</li>
 <img src="./media/readme/chrome.png" width=600px height=auto>
@@ -545,14 +545,14 @@ If the page that users are looking for doesn't exist, they are provided with a c
 <li>Firefox</li>
 <img src="./media/readme/firefox.png" width=600px height=auto>
 
-    Tests were completed in following browsers from mobile device (iOS):
+  Tests were completed in following browsers from mobile device (iOS):
 
 <li>Chrome</li>
 <img src="./media/readme/chromeios.jpeg" width=300px height=auto>
 <li>Safari</li>
 <img src="./media/readme/safariios.jpeg" width=300px height=auto>
 
-    No broken links found, everything works as expected.
+  No broken links found, everything works as expected.
 
 
   ### Fixed Bugs
