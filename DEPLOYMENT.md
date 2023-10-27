@@ -2,49 +2,27 @@
 
 ## Table of Contents
 
-* [Cloning and forking](#cloning-and-forking)
+* [Create Repository](#create-repository)
 * [Setting up the Workspace](#setting-up-the-workspace)
 * [Creating ElephantSQL database](#creating-elephantsql-database)
 * [Creating Heroku App](#creating-heroku-app)
 * [AWS S3 Bucket](#aws-s3-bucket)
 * [Creating Environmental Variables](#creating-environmental-variables)
 * [Setting up settings.py file](#setting-up-settingspy-file)
+* [Cloning and forking](#cloning-and-forking)
 
-<p>To deploy the site using GitHub Pages:</p>
-<ol>
-<li>Login or signup to Github.</li>
-<li>Go to the repository for this project, https://github.com/Sergutin/IgorMotors</li>
-<li>At the top of the repository, locate the "Settings" button on the menu.</li>
-<li>Select "Pages" section in the left hand menu.</li>
-<li>From the "Source" dropdown select "Deploy from a Branch". Press "Save".</li>
-<li>The site has now been deployed, please note that the process may take a few minutes before the site goes live.</li>
-</ol>
 
-  ### Cloning and forking
-<p>Forking a repository creates a copy of the original repository on GitHub account.
-To fork a repository in GitHub:</p>
-<ol>
-<li>On GitHub.com, navigate to the repository.</li>
-<li>In the top-right corner of the page, click Fork.</li>
-<li>Select an owner for the forked repository.</li>
-<li>By default, forks are named the same as their parent repositories. You can change the name of the fork to distinguish it further.</li>
-<li>Optionally, add a description of your fork.</li>
-<li>Choose whether to copy only the default branch or all branches to the new fork. For many forking scenarios, such as contributing to open-source projects, you only need to copy the default branch. By default, only the default branch is copied.</li>
-<li>Click Create fork.</li>
-</ol>
+<p>I took the following steps to deploy the site to Heroku, along with the necessary console commands for initialization.</p>
 
-<p>Cloning a repository creates a copy of the original repository on our local machine.
-To clone a repository in GitHub:</p>
-<ol>
-<li>On GitHub.com, navigate to your fork of the repository.</li>
-<li>Above the list of files, click  Code.</li>
-<li>Copy the URL for the repository.</li>
-<ul>
-    <li>To clone the repository using HTTPS, click the "Copy" icon on the right of "HTTPS".</li>
-<li>To clone the repository using an SSH key, including a certificate issued by your organization's SSH certificate authority, click SSH, then click the icon on the right to copy it.</li>
-  <li>To clone a repository using GitHub CLI, click GitHub CLI, then click the "Copy" icon on the right.</li>
-</ul>
-</ol>
+  > pip3 install -r requirements.txt
+
+  ### Create Repository
+
+Create a new repository in GitHub and clone it locally following [these instructions](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository)
+
+<li> If you are cloning this project, then you can skip all pip3 installs and just run the following command in the terminal to install all the required libraries/packages at once:</li>
+
+If developing locally on your device, ensure you set up/activate the virtual environment ([see below](#setting-up-the-workspace)) before installing/generating the requirements.txt file; failure to do this will put other projects at risk.
 
   ### Setting up the Workspace
 <li>Install Django with version 3.2:</li>
@@ -419,3 +397,28 @@ To clone a repository in GitHub:</p>
       class MediaStorage(S3Boto3Storage):
           location = settings.MEDIAFILES_LOCATION
 
+  ### Cloning and forking
+<p>Forking a repository creates a copy of the original repository on GitHub account.
+To fork a repository in GitHub:</p>
+<ol>
+<li>On GitHub.com, navigate to the repository.</li>
+<li>In the top-right corner of the page, click Fork.</li>
+<li>Select an owner for the forked repository.</li>
+<li>By default, forks are named the same as their parent repositories. You can change the name of the fork to distinguish it further.</li>
+<li>Optionally, add a description of your fork.</li>
+<li>Choose whether to copy only the default branch or all branches to the new fork. For many forking scenarios, such as contributing to open-source projects, you only need to copy the default branch. By default, only the default branch is copied.</li>
+<li>Click Create fork.</li>
+</ol>
+
+<p>Cloning a repository creates a copy of the original repository on our local machine.
+To clone a repository in GitHub:</p>
+<ol>
+<li>On GitHub.com, navigate to your fork of the repository.</li>
+<li>Above the list of files, click  Code.</li>
+<li>Copy the URL for the repository.</li>
+<ul>
+    <li>To clone the repository using HTTPS, click the "Copy" icon on the right of "HTTPS".</li>
+<li>To clone the repository using an SSH key, including a certificate issued by your organization's SSH certificate authority, click SSH, then click the icon on the right to copy it.</li>
+  <li>To clone a repository using GitHub CLI, click GitHub CLI, then click the "Copy" icon on the right.</li>
+</ul>
+</ol>
