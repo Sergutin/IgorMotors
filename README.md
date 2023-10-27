@@ -675,6 +675,209 @@ To clone a repository in GitHub:</p>
 </ul>
 </ol>
 
+  ### Setting up the Workspace
+<li>Install Django with version 3.2:</li>
+
+  > pip3 install django==3.2.20
+
+<li>Install django-allauth for account authentication, registration, management, and third-party (social) account authentication:</li>
+
+  > pip3 install django-allauth==0.41.0
+
+<li>Install Django Crispy Forms:</li>
+
+  > pip3 install django-crispy-forms==1.14.0
+
+<li>Install Django Countries:</li>
+
+  > pip3 install django-countries==7.2.1
+
+<li>Install gunicorn:</li>
+
+  > pip3 install gunicorn
+<li>Install supporting libraries:</li>
+
+  > pip3 install dj_database_url==0.5.0 psycopg2
+
+<li>Create requirements.txt:</li>
+
+  > pip3 freeze > requirements.txt
+
+<li>Create a folder, and a project in that folder:</li>
+
+  > django-admin startproject <your_project_name> (in my case, the project name was "igormotors")
+
+<li>Create an app within the project:</li>
+
+  > python3 manage.py startapp <your_app_name> (in my case, the app name was "igormotors")
+
+<li>Add a new app to the list of installed apps in setting.py</li>
+
+<li>Migrate changes:</li>
+
+  > python3 manage.py migrate
+
+<li>Test server:</li>
+
+  > python manage.py runserver (You should see the default Django success page)
+
+  ### Creating ElephantSQL database
+
+<p>Assuming that the user has already created an account with ElephantSQL.</p>
+
+<li>Click “Create New Instance”</li>
+
+<li>Set up your plan. 
+  <ul>Give your plan a Name.</ul>
+  <ul>Select the plan.</ul>
+  <ul>You can leave the Tags field blank.</ul>
+</li>
+
+<li>Select “Select Region”</li>
+
+<li>Click “Review”</li>
+
+<li>Check your details are correct and then click “Create instance”</li>
+
+<li>Return to the ElephantSQL dashboard and click on the database instance name for this project</li>
+
+  ### Creating Heroku App
+
+<p>Assuming that the user has already created an account with Heroku.</p>
+
+<li>Create a new Heroku app:</li>
+
+  > Click "New" in the top right-hand corner of the main page, then click "Create new app"
+
+<li>Give your app a name and select the region closest to you. When you’re done, click "Create app" to confirm</li>
+
+<li>Open the "Settings" tab. Add the config var DATABASE_URL, and for the value, copy in your database url from ElephantSQL.</li>
+
+<li>From your editor, go to your projects settings.py file and copy the SECRET_KEY variable. Add this to the same name variable under the Heroku App's config vars.</li>
+
+  <ul>left box under config vars (variable KEY) = SECRET_KEY</ul>
+  <ul>right box under config vars (variable VALUE) = Value copied from settings.py in project.</ul>
+
+  ### AWS S3 Bucket  
+
+<p>Assuming that the user has already created an account with AWS.</p>
+
+<li>Create a new S3 bucket:</li>
+
+  <ul>Click "Services" in the top left-hand corner of the main page, select "S3"</ul>
+
+  <ul>Click "Create bucket", give the bucket a unique name</ul>
+
+  <ul>Select the nearest location</ul>
+
+  <ul>Under the "Object Ownership" section, select "ACLS enabled"</ul>
+
+  <ul>Under the "Bucket settings for Block Public Access", uncheck "Block all public access", and acknowledge that this will make the bucket public</ul>
+
+  <ul>Click "Create bucket"</ul>
+
+<li>Bucket settings:</li>
+
+  <ul>Click on the bucket name, and then on the "Properties" tab</ul>
+
+  <ul>Under the "Static website hosting" section, click "Edit"</ul>
+
+  <ul>Under the "Static website hosting" section select "Enable"</ul>
+
+  <ul>Under the "Hosting type" section ensure "Host a static website" is selected</ul>
+
+  <ul>Under the "Index document" section enter "index.html"</ul>
+
+  <ul>Click "Save changes"</ul>
+
+<li>Bucket permissions:</li>
+
+  <ul>Click on the "Permissions" tab</ul>
+
+  <ul>Scroll down to the "CORS configuration" section and click edit</ul>
+
+  <ul>Enter the following snippet into the text box</ul>
+
+    [
+      {
+          "AllowedHeaders": [
+              "Authorization"
+          ],
+          "AllowedMethods": [
+              "GET"
+          ],
+          "AllowedOrigins": [
+              "*"
+          ],
+          "ExposeHeaders": []
+      }
+    ]
+
+  <ul>Click "Save changes"</ul>
+
+  <ul>Scroll back up to the "Bucket Policy" section and click "Policy generator"</ul>
+
+  <ul>Select "S3 Bucket Policy" from the drop down menu</ul>
+
+  <ul>Enter " * " in the "Principal" text box</ul>
+
+  <ul>From the "Actions" drop down menu select "GetObject"</ul>
+
+  <ul>Copy and paste the "ARN" from the bucket policy page into the "Amazon Resource Name (ARN)" text box.</ul>
+
+  <ul>Click "Add Statement", and then "Generate Policy"</ul>
+
+  <ul>Copy the policy and paste it into the bucket policy text box on the previous tab. In the same text box add "/*" to the end of the resource key to allow access to all resources in this bucket.</ul>
+
+  <ul>Click "Save"</ul>
+
+  <ul>Select "Access Control List" section, find "Public access" and click "Everyone" under it. In the "Access to the objects" pop up window, tick "List objects"</ul>
+
+  <ul>Click "Save"</ul>
+
+<li>Create AWS static files User and assign to S3 Bucket:</li>
+
+  <ul>Create "User Group":</ul>
+
+      Click "Services" in the top left-hand corner of the main page
+    
+      Under "Access management" click "Groups"
+
+      Click "Create New Group", enter Group Name
+
+      Scroll to the bottom of the page and click "Create Group"
+
+  <ul>Create permissions policy for the new user group:</ul>
+
+      Click "Policies" in the left-hand menu.
+
+      Click "Create Policy"
+
+      Click "Import managed policy"
+
+      Search for "AmazonS3FullAccess", select this policy, and click "Import"
+
+      Click "JSON" under "Policy Document" to see the imported policy
+
+      Copy the bucket ARN from the bucket policy page and paste it into the "Resource" section of the JSON snippet. Be sure to remove the default value of the resource key ("*") and replace it with the bucket ARN.
+      Copy the bucket ARN a second time into the "Resource" section of the JSON snippet. This time, add "/*" to the end of the ARN to allow access to all resources in this bucket
+
+      Click "Next: Tags"
+
+      Click "Next: Review"
+
+      Click "Review Policy"
+
+      Enter a name for the policy
+      
+      Enter a description for the policy
+
+      Click "Create Policy"
+
+
+
+
+
 ## Media
 The main page image was taken from 
 ## **[Here](https://www.autonews.com/future-product/tesla-future-product-2023-kicks-next-big-cycle)**
