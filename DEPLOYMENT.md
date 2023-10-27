@@ -10,10 +10,6 @@
 * [Creating Environmental Variables](#creating-environmental-variables)
 * [Setting up settings.py file](#setting-up-settingspy-file)
 
-settings.py file
-  * [HTML](#html)
-  * [CSS](#css)
-
 <p>To deploy the site using GitHub Pages:</p>
 <ol>
 <li>Login or signup to Github.</li>
@@ -235,6 +231,7 @@ To clone a repository in GitHub:</p>
       Click "JSON" under "Policy Document" to see the imported policy
 
       Copy the bucket ARN from the bucket policy page and paste it into the "Resource" section of the JSON snippet. Be sure to remove the default value of the resource key ("*") and replace it with the bucket ARN.
+
       Copy the bucket ARN a second time into the "Resource" section of the JSON snippet. This time, add "/*" to the end of the ARN to allow access to all resources in this bucket
 
       Click "Review Policy"
@@ -312,3 +309,113 @@ To clone a repository in GitHub:</p>
   > SECRET_KEY, “randomSecretKey”
 
 ### Setting up settings.py file
+
+<li>At the top of your settings.py file, add the following:</li>
+
+    import os
+    from pathlib import Path
+    import dj_database_url
+    if os.path.isfile("env.py"):
+      import env
+
+<li>Add a conditional in setting.py DATABASES section by replacing it with the following snippet to link up the Heroku Postgres server when in production and SQLite3 when developing locally:</li>
+
+    if 'DATABASE_URL' in os.environ:
+        DATABASES = {
+            'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+        }
+    else:
+        DATABASES = {
+            'default': {
+                'ENGINE': 'django.db.backends.sqlite3',
+                'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+            }
+        }
+
+<li>Tell Django to where to store media and static files by placing this under the comments:</li>
+
+    # Static files (CSS, JavaScript, Images)
+    # https://docs.djangoproject.com/en/3.2/howto/static-files/
+
+    STATIC_URL = '/static/'
+    STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
+
+    MEDIA_URL = '/media/'
+    MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+<li>Build paths inside the project:</li>
+
+    BASE_DIR = Path(__file__).resolve().parent.parent
+
+<li>Within TEMPLATES array, add 'DIRS':[TEMPLATES_DIR] like the below example:</li>
+
+    TEMPLATES = [
+          {
+              …,
+              'DIRS': [
+                os.path.join(BASE_DIR, 'templates'),
+                os.path.join(BASE_DIR, 'templates', 'allauth'),
+        ],
+              …,
+              
+            },
+      ]
+
+<li>Link S3 Bucket to Django Project by adding the following to the settings.py file:</li>
+
+    if 'USE_AWS' in os.environ:
+        # Cache control
+        AWS_S3_OBJECT_PARAMETERS = {
+            'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
+            'CacheControl': 'max-age=94608000',
+        }
+
+        # Bucket Config
+        AWS_STORAGE_BUCKET_NAME = 'igormotors'
+        AWS_S3_REGION_NAME = 'eu-west-1'
+        AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+        AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+        AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
+
+        # Static and media files
+        STATICFILES_STORAGE = 'custom_storages.StaticStorage'
+        STATICFILES_LOCATION = 'static'
+        DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
+        MEDIAFILES_LOCATION = 'media'
+
+        # Override static and media URLs in production
+        STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
+        MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
+
+<li>Add allowed hosts to settings.py:</li>
+
+      ALLOWED_HOSTS = ["PROJECT_NAME.herokuapp.com", "localhost", "127.0.0.1",
+                      '.herokuapp.com',]
+
+<li>Create Procfile at the top level of the file structure and insert the following:</li>
+
+      web: gunicorn PROJECTNAME.wsgi:application
+
+<li>Make an initial commit and push the code to the GitHub Repository</li>
+
+      git add .
+      git commit -m "Initial deployment"
+      git push
+
+<li>Add AWS Keys (see above) to Heroku Config Vars</li>
+
+<li>Add the USE_AWS variable to Heroku Config Vars and set it to True</li>
+
+<li>Create a file called "Custom_storages.py" in the root of the project and add the following code:</li>
+
+      from django.conf import settings
+      from storages.backends.s3boto3 import S3Boto3Storage
+
+
+      class StaticStorage(S3Boto3Storage):
+          location = settings.STATICFILES_LOCATION
+
+
+      class MediaStorage(S3Boto3Storage):
+          location = settings.MEDIAFILES_LOCATION
+
