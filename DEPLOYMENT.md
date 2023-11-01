@@ -11,16 +11,15 @@
 * [Setting up settings.py file](#setting-up-settingspy-file)
 * [Cloning and forking](#cloning-and-forking)
 
+  ### Create Repository
 
 <p>I took the following steps to deploy the site to Heroku, along with the necessary console commands for initialization.</p>
 
-  > pip3 install -r requirements.txt
-
-  ### Create Repository
-
-Create a new repository in GitHub and clone it locally following [these instructions](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository)
+<li>Create a new repository in GitHub and clone it locally following [these instructions](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository)</li>
 
 <li> If you are cloning this project, then you can skip all pip3 installs and just run the following command in the terminal to install all the required libraries/packages at once:</li>
+  
+  > pip3 install -r requirements.txt
 
 If developing locally on your device, ensure you set up/activate the virtual environment ([see below](#setting-up-the-workspace)) before installing/generating the requirements.txt file; failure to do this will put other projects at risk.
 
@@ -48,6 +47,10 @@ If developing locally on your device, ensure you set up/activate the virtual env
 
   > pip3 install dj_database_url==0.5.0 psycopg2
 
+  > python3 -m pip install Pillow
+
+  > pip3 install stripe
+
 <li>Create requirements.txt:</li>
 
   > pip3 freeze > requirements.txt
@@ -68,7 +71,7 @@ If developing locally on your device, ensure you set up/activate the virtual env
 
 <li>Test server:</li>
 
-  > python manage.py runserver (You should see the default Django success page)
+  > python3 manage.py runserver (You should see the default Django success page)
 
   ### Creating ElephantSQL database
 
@@ -295,6 +298,9 @@ If developing locally on your device, ensure you set up/activate the virtual env
     import dj_database_url
     if os.path.isfile("env.py"):
       import env
+    
+    SECRET_KEY = os.environ.get('SECRET_KEY', '')
+    DEBUG = 'DEVELOPMENT' in os.environ
 
 <li>Add a conditional in setting.py DATABASES section by replacing it with the following snippet to link up the Heroku Postgres server when in production and SQLite3 when developing locally:</li>
 
@@ -320,6 +326,12 @@ If developing locally on your device, ensure you set up/activate the virtual env
 
     MEDIA_URL = '/media/'
     MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+<li>Add the following snippet to the end of the urlpatterns list:</li>
+
+    urlpatterns = [
+    path('admin/', admin.site.urls),
+      ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 <li>Build paths inside the project:</li>
 
