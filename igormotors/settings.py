@@ -25,15 +25,31 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('SECRET_KEY', '')
+if 'DEVELOPMENT' in os.environ:
+    SECRET_KEY = os.environ.get('SECRET_KEY', 'dev-secret-key')
+else:
+    SECRET_KEY = os.environ['SECRET_KEY']
+
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'DEVELOPMENT' in os.environ
 
-ALLOWED_HOSTS = ['8000-sergutin-igormotors-b451549qmn2.ws-eu104.gitpod.io',
-                 'igormotors.heroku.com', 'localhost',
-                 '.herokuapp.com',
-                 'igormotors-fa74a181bdfa.herokuapp.com']
+# Dynamically allow Gitpod workspace host
+if os.environ.get("GITPOD_WORKSPACE_URL"):
+    GITPOD_HOST = os.environ["GITPOD_WORKSPACE_URL"].replace("https://", "").replace("http://", "")
+    ALLOWED_HOSTS = [GITPOD_HOST, 'localhost', '127.0.0.1',
+    '8000-sergutin-igormotors-z0r1b33y0nt.ws-eu119.gitpod.io']
+else:
+    ALLOWED_HOSTS = [
+        'localhost',
+        '127.0.0.1',
+        'igormotors.heroku.com',
+        '.herokuapp.com',
+        'igormotors-fa74a181bdfa.herokuapp.com',
+    ]
+
+
 
 
 # Application definition
@@ -66,6 +82,7 @@ MIDDLEWARE = [
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'allauth.account.middleware.AccountMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
@@ -111,10 +128,9 @@ AUTHENTICATION_BACKENDS = [
 
 SITE_ID = 1
 
-ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
-ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_LOGIN_METHODS = {'username', 'email'}
+ACCOUNT_SIGNUP_FIELDS = ['email*', 'email2*', 'username*', 'password1*', 'password2*']
 ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
-ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True
 ACCOUNT_USERNAME_MIN_LENGTH = 4
 LOGIN_URL = '/accounts/login/'
 LOGIN_REDIRECT_URL = '/'
@@ -126,9 +142,9 @@ WSGI_APPLICATION = 'igormotors.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 
-if 'DATABASE_URL' in os.environ:
+if os.environ.get('DATABASE_URL'):
     DATABASES = {
-        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+        'default': dj_database_url.parse(os.environ['DATABASE_URL'], conn_max_age=600, ssl_require=True)
     }
 else:
     DATABASES = {
