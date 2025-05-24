@@ -38,7 +38,7 @@ DEBUG = 'DEVELOPMENT' in os.environ
 # Dynamically allow Gitpod workspace host
 if os.environ.get("GITPOD_WORKSPACE_URL"):
     GITPOD_HOST = os.environ["GITPOD_WORKSPACE_URL"].replace("https://", "").replace("http://", "")
-    ALLOWED_HOSTS = [GITPOD_HOST, 'localhost', '127.0.0.1',
+    ALLOWED_HOSTS = [GITPOD_HOST, 'localhost', '127.0.0.1', 'www.sergutin.com', 'sergutin.com',
     '8000-sergutin-igormotors-z0r1b33y0nt.ws-eu119.gitpod.io']
 else:
     ALLOWED_HOSTS = [
